@@ -7,6 +7,7 @@ import { fetchingJustReleased } from './redux/actions'
 import HomePage from "./Home/HomePage"
 import Nav from "./NavBar/Nav"
 import SearchPage from "./SearchPage/SearchPageContainer"
+import Show from "./ShowPage/ShowPageContainer"
 
 class App extends Component {
   componentDidMount(){
@@ -22,6 +23,10 @@ class App extends Component {
           < Route exact path="/" render={() => <Redirect to="/home"/>}/>
           < Route exact path="/home" component={HomePage}/>
           < Route exact path="/games" component={SearchPage}/>
+          < Route exact path="/game/:id" render={(props) => {
+            let gameID = props.match.params.id 
+             return < Show gameID={gameID}/>
+          }}/>
         </Switch>
       </div>
     )
