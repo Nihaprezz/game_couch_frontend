@@ -9,10 +9,10 @@ import Nav from "./NavBar/Nav"
 import SearchPage from "./SearchPage/SearchPageContainer"
 import Show from "./ShowPage/ShowPageContainer"
 
+
 class App extends Component {
   componentDidMount(){
     this.props.fetchingJustReleased()
-    
   }
 
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
           < Route exact path="/games" component={SearchPage}/>
           < Route exact path="/game/:id" render={(props) => {
             let gameID = props.match.params.id 
-             return < Show gameID={gameID}/>
+             return  < Show gameID={gameID}/> 
           }}/>
         </Switch>
       </div>
