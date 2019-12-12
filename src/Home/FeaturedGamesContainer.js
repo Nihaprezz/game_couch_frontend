@@ -8,7 +8,7 @@ class FeaturedGamesContainer extends React.Component{
         return (
             <div>
                 This is the FeaturedGamesContainer
-                {this.props.justReleased.map(game => {
+                {this.props.justReleased.slice(0,4).map(game => {
                     return < GameCard key={game.id} gameObject={game}/>
                 })}
             </div>
