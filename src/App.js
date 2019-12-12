@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Route, Switch, withRouter } from "react-router-dom";
+import { connect } from "react-redux"
 import './App.css';
+import { fetchingJustReleased } from './redux/actions'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import HomePage from "./Home/HomePage"
+
+
+class App extends Component {
+  componentDidMount(){
+    this.props.fetchingJustReleased()
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div>NavBar Componenet will go here</div>
+        <Switch>
+          < Route exact path="/home" component={HomePage}/>
+          < Route exact path="/games" render={() => <div>This willm be the all games search componenet</div>}/>
+        </Switch>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchingJustReleased: () => {dispatch(fetchingJustReleased())}
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(App));
+
