@@ -8,6 +8,8 @@ import HomePage from "./Home/HomePage"
 import Nav from "./NavBar/Nav"
 import SearchPage from "./SearchPage/SearchPageContainer"
 import Show from "./ShowPage/ShowPageContainer"
+import ProfilePage from "./Profile/ProfilePage"
+import FeedPage from "./Feed/FeedPage"
 
 
 class App extends Component {
@@ -27,6 +29,8 @@ class App extends Component {
             let gameID = props.match.params.id 
              return  < Show gameID={gameID}/> 
           }}/>
+          < Route exact path="/profile" component={ProfilePage}/>
+          < Route exact path="/feed" component={FeedPage}/> 
         </Switch>
       </div>
     )

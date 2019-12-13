@@ -12,7 +12,12 @@ class Nav extends React.Component {
                 < Link className="button is-primary" to="/games"> 
                     Games 
                 </Link>
-                
+                < Link className="button is-primary" to="/profile">
+                    Profile
+                </Link>
+                <Link className="button is-primary" to="/feed">
+                    Feed
+                </Link>
             </div>
         )
     }
