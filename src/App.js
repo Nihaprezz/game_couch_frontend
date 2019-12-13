@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter, Redirect} from "react-router-dom";
 import { connect } from "react-redux"
 import './App.css';
-import { fetchingJustReleased } from './redux/actions'
+import { fetchingJustReleased, checkUser } from './redux/actions'
 
 import HomePage from "./Home/HomePage"
 import Nav from "./NavBar/Nav"
@@ -10,11 +10,16 @@ import SearchPage from "./SearchPage/SearchPageContainer"
 import Show from "./ShowPage/ShowPageContainer"
 import ProfilePage from "./Profile/ProfilePage"
 import FeedPage from "./Feed/FeedPage"
+import LoginPage from "./Login/LoginPage"
 
 
 class App extends Component {
   componentDidMount(){
     this.props.fetchingJustReleased()
+
+    if (localStorage.getItem('jwt')){
+      this.props.checkUser()
+    }
   }
 
   render() {
@@ -30,7 +35,8 @@ class App extends Component {
              return  < Show gameID={gameID}/> 
           }}/>
           < Route exact path="/profile" component={ProfilePage}/>
-          < Route exact path="/feed" component={FeedPage}/> 
+          < Route exact path="/feed" component={FeedPage}/>
+          < Route exact path="/login" component={LoginPage}/> 
         </Switch>
       </div>
     )
@@ -39,7 +45,8 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchingJustReleased: () => {dispatch(fetchingJustReleased())}
+    fetchingJustReleased: () => {dispatch(fetchingJustReleased())},
+    checkUser: () => {dispatch(checkUser())}
   }
 }
 

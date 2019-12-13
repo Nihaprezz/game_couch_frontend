@@ -5,7 +5,6 @@ import GameReviesContainer from "./GameReviewsContainer"
 class ShowDetails extends React.Component{
     
     render(){
-        console.log(this.props)
         let { description_raw, rating, released, website, stores} = this.props.movieObj
    
         return (

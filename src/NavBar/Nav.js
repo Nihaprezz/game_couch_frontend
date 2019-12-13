@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { connect } from "react-redux"
+import { signOut } from "../redux/actions"
 
 class Nav extends React.Component {
 
@@ -18,9 +20,29 @@ class Nav extends React.Component {
                 <Link className="button is-primary" to="/feed">
                     Feed
                 </Link>
+                {!Array.isArray(this.props.currentUser) ? (
+                    // eslint-disable-next-line
+                    <a onClick={() => this.props.signOut()}
+                    className="button is-primary">
+                        Sign Out
+                    </a>
+                ): (
+                    <Link className="button is-primary" to="/login">
+                        Login
+                    </Link>
+                )}
+
             </div>
         )
     }
 }
 
-export default Nav
+const mapStateToProps = (state) => ({
+    currentUser: state.currentUser
+})
+
+const mapDispatchToProps = dispatch => ({
+    signOut: () => dispatch(signOut())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
