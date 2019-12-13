@@ -19,7 +19,7 @@ export const LoadingSpinerComponent = (props) => {
             <div className="sweet-loading">
             <DotLoader
             css={override}
-            size={400} 
+            size={700} 
             color={"#36D7B7"}
             />
             </div>

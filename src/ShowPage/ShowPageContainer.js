@@ -1,6 +1,8 @@
 import React from "react"
 import { trackPromise} from 'react-promise-tracker';
 import { LoadingSpinerComponent } from './Loading'
+import ShowHeader from './container/ShowHeader'
+import ShowDetails from "./container/ShowDetails"
 
 
 class ShowPageContainer extends React.Component {
@@ -37,28 +39,14 @@ class ShowPageContainer extends React.Component {
     }
 
     render(){
-
-        let { name, background_image, description_raw, dominant_color, released, website, rating } = this.state.showGame
-        debugger
         return (
-        
             <div>
-                <LoadingSpinerComponent/>
-        
-                This is the show Page Container for : {name}
-                <img alt={name} src={`${background_image}`}></img>
-                <div>Description: {description_raw}</div>
-                <div>{dominant_color}</div>
-                <div>Released : {released}</div>
-                <div>Website : {website}</div>
-                <div>Rating : {rating}</div> 
-                
-                <br></br>
-                <div>
-                    <h1>Game Details</h1>
-
-                </div>
-            
+                {!this.state.showGame.name ? <LoadingSpinerComponent/> : (
+                    <div>
+                    < ShowHeader movieObj={this.state.showGame} screenShots={this.state.gameScreenShots}/> 
+                    < ShowDetails movieObj={this.state.showGame}/>
+                    </div>
+                )}  
             </div>
         )
     }
