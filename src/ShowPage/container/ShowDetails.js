@@ -15,6 +15,8 @@ class ShowDetails extends React.Component{
                 <p>Released: {released}</p>
                 <a href={website}>Website</a>
 
+                
+
                 <div>
                     Video: {this.props.movieObj.clip ? <video src={this.props.movieObj.clip.clip} controls></video> : (
                       <h1>no video</h1> 
