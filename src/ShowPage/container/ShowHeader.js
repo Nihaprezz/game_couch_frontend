@@ -22,7 +22,7 @@ class ShowHeader extends React.Component{
             if (data.message === "Already Liked!"){
                 Swal.fire({
                     title: 'Already Liked!',
-                    text: 'Game already liked, browse more games!',
+                    text: 'Browse more games!',
                     icon: 'error',
                     confirmButtonText: 'Back'
                 })

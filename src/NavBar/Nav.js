@@ -14,12 +14,21 @@ class Nav extends React.Component {
                 < Link className="button is-primary" to="/games"> 
                     Games 
                 </Link>
-                < Link className="button is-primary" to="/profile">
-                    Profile
-                </Link>
-                <Link className="button is-primary" to="/feed">
-                    Feed
-                </Link>
+
+                {/* Logic to handle showing links. Fragment used for React to stop erroring with JSX returns */}
+                {!Array.isArray(this.props.currentUser) ? (
+                <React.Fragment>
+                    < Link className="button is-primary" to="/profile">
+                        Profile
+                    </Link> 
+
+                    <Link className="button is-primary" to="/feed">
+                        Feed
+                    </Link> 
+                </React.Fragment>
+                ): null}
+
+
                 {!Array.isArray(this.props.currentUser) ? (
                     // eslint-disable-next-line
                     <a onClick={() => this.props.signOut()}

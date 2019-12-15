@@ -94,4 +94,9 @@ function logIn(userInfo){
     }
 }
 
-export { fetchingJustReleased, signUp, checkUser, signOut,logIn}
+//changing the search text in the redux store
+function changeSearch(text){
+    return {type: "CHANGE_SEARCH", payload: text}
+}
+
+export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch}
