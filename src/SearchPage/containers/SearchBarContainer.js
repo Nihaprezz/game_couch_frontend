@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux"
+import {gameSearchResults} from "../../redux/actions"
 
 class SearchBarContainer extends React.Component {
     constructor(){
@@ -11,7 +13,16 @@ class SearchBarContainer extends React.Component {
 
     handleSearchSubmit = (e) => {
         e.preventDefault()
-        console.log("hitting submit", this.state.searchText)
+        if (this.state.searchText !== ""){
+            let search = this.state.searchText
+            fetch(`http://localhost:3001/game/search/${search}`)
+            .then(resp => resp.json())
+            .then(games => {
+                this.props.gameSearchResults(games.results)
+            })
+        }
+        
+        document.getElementById("game-search").value = "" //janky way of resetting the value of the search input
     }
 
     onSearchChange = (e) => {
@@ -24,11 +35,17 @@ class SearchBarContainer extends React.Component {
             className="field has-addons">
                 <div className="control">
                     <input onChange={(e) => this.onSearchChange(e)}
-                    className="input" type="text" name="Search" placeholder="Search..."/>
+                    id="game-search" className="input" type="text" name="Search" placeholder="Search..."/>
                 </div>
             </form>
         )
     }
 }
 
-export default SearchBarContainer
+const mapDispatchToProps = (dispatch) => {
+    return {
+        gameSearchResults: (games) => { dispatch(gameSearchResults(games))}
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SearchBarContainer)

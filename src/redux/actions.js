@@ -1,5 +1,9 @@
 let HOST_URL = "http://localhost:3001"
 
+function gameSearchResults(games){
+    return {type: "SEARCH_RESULTS", payload: games}
+}
+
 function fetchedJustReleased(games) {
     return {type: "FETCH_JUST_RELEASED", payload: games.results}
   }
@@ -64,7 +68,7 @@ function checkUser(){
             })
             .then(res => res.json())
             .then(user => {
-                dispatch(setCurrentUser(user))
+                dispatch(setCurrentUser(user.user))
             })
         }
     }
@@ -99,4 +103,4 @@ function changeSearch(text){
     return {type: "CHANGE_SEARCH", payload: text}
 }
 
-export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch}
+export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults}

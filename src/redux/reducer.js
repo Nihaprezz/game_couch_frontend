@@ -4,6 +4,8 @@ const releasedReducer = (state = [], action) => {
     switch(action.type) {
         case "FETCH_JUST_RELEASED":
             return action.payload
+        case "SEARCH_RESULTS":
+                return action.payload
         default: 
             return state;
     }
