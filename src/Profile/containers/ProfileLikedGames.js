@@ -1,12 +1,12 @@
 import React from "react" 
 import GameCard from "../components/GamesProfile"
 import { connect } from "react-redux"
-import { fetchingLikedGames } from "../../redux/actions"
+import { fetchingAllUserInfo } from "../../redux/actions"
 
 class ProfileLikedGames extends React.Component {
 
     componentDidMount(){
-        this.props.fetchingLikedGames()
+        this.props.fetchingAllUserInfo()
     }
 
     render(){
@@ -29,7 +29,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchingLikedGames: () => {dispatch(fetchingLikedGames())}
+        fetchingAllUserInfo: () => {dispatch(fetchingAllUserInfo())}
     }
 }
 

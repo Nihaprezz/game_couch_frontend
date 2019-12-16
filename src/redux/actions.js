@@ -150,24 +150,30 @@ function changeSearch(text){
     return {type: "CHANGE_SEARCH", payload: text}
 }
 
-//FETCHING USER'S LIKED GAMES
+//SETTING USER'S LIKED GAMES
 function fetchedLikedGames(games){
     return {type: "GET_LIKED_GAMES", payload: games}
 }
 
-function fetchingLikedGames() {
+//SETTING USER'S FRIENDS
+function fetchedFriends(friends){
+    return {type: "GET_FRIENDS", payload: friends}
+}
+
+function fetchingAllUserInfo() {
     return (dispatch) => {
-        fetch(`${HOST_URL}/user/liked_games`,{
+        fetch(`${HOST_URL}/user/all_info`,{
             headers: {
                 "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
             }
         })
         .then(resp => resp.json())
-        .then(games => {
-            dispatch(fetchedLikedGames(games))
+        .then(data => {
+            dispatch(fetchedLikedGames(data.likedGames))
+            dispatch(fetchedFriends(data.friends))
         })
     }
 }
 
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingLikedGames}
+    fetchingAllUserInfo}
