@@ -1,0 +1,13 @@
+@import "variables.scss";
+
+.feed-page-container {
+    border: 3px solid green;
+    display: grid;
+    grid-template-columns: 20% auto 15%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "user posts recommended";
+}
+
+.user-avatar-post-container {
+    grid-area: user;
+}

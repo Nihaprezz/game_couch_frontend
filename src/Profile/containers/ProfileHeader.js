@@ -6,7 +6,6 @@ class ProfileHeader extends React.Component {
 
     render(){
         let {username, bio, avatar, favorite_genre, location} = this.props.currentUser
-        console.log(this.props.friends.length)
         return (
             <div className="profile-header">
                 <h1>Username : {username}</h1>
