@@ -1,5 +1,7 @@
 import React from "react"
 
+const genres = ["Action", "Arcade", "Adventure", "Casual", "Family", "Fighting", "Indie", "Platformer", "Puzzle", "Racing", "RPG", "Shooter","Simulation", "Sports", "Strategy"]
+
 const sample = {
     width: '40vw'
 }
@@ -62,9 +64,13 @@ class Signup extends React.Component {
 
                 <div className="field">
                     <label className="label">Favorite Genre</label>
-                    <div className="control">
-                        <input onChange={(event) => this.handleInputChange(event)}
-                        className="input" name="genre" type="text" placeholder="Genre"/>
+                    <div className="select">
+                        <select name="favorite_genre" onChange={(event) => this.handleInputChange(event)}>
+                            <option defaultValue="" disabled selected hidden>Genre</option>
+                            {genres.map(genre => {
+                                return <option key={genre}>{genre}</option>
+                            })}
+                        </select>
                     </div>
                 </div>
 

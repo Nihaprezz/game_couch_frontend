@@ -11,7 +11,7 @@ class ProfilePage extends React.Component {
             <div> 
                 < ProfileHeader currentUser={this.props.currentUser}/>
                 < ProfileLikedGames />
-                < ProfilePosts currentUser={this.props.currentUser}/>
+                < ProfilePosts />
             </div>  
         )
     }
