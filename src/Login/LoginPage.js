@@ -9,7 +9,7 @@ class LoginPage extends React.Component {
         super();
 
         this.state = {
-            displayLogin: false
+            displayLogin: true
         }
     }
 
