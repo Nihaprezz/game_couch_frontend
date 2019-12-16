@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 let HOST_URL = "http://localhost:3001"
 
 // FETCHING GAME INFO FROM THE BACKEND!! //
@@ -127,8 +129,18 @@ function logIn(userInfo){
         })
         .then(res => res.json())
         .then(data => {
-            dispatch(setCurrentUser(data.user))
-            localStorage.setItem("jwt", data.jwt)
+            if(data.message === "Invalid username or password"){
+                Swal.fire({
+                    title: 'Unable to Login!',
+                    text: `${data.message}`,
+                    icon: 'error',
+                    confirmButtonText: 'Back'
+                })
+            } else {
+                dispatch(setCurrentUser(data.user))
+                localStorage.setItem("jwt", data.jwt)  
+            }
+
         })
     }
 }
