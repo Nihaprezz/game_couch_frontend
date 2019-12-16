@@ -2,20 +2,25 @@ import React from "react"
 import ProfileHeader from "./containers/ProfileHeader"
 import ProfileLikedGames from "./containers/ProfileLikedGames"
 import ProfilePosts from "./containers/ProfilePosts"
+import { connect } from "react-redux"
 
 
-class ProfilePage extends React.Component {
-    
+class ProfilePage extends React.Component {    
     render(){
         return (
             <div> 
-                This is the ProfilePage Comp
-                < ProfileHeader />
+                < ProfileHeader currentUser={this.props.currentUser}/>
                 < ProfileLikedGames />
-                < ProfilePosts />
+                < ProfilePosts currentUser={this.props.currentUser}/>
             </div>  
         )
     }
 }
 
-export default ProfilePage
+const mapStateToProps = state => {
+    return {
+        currentUser: state.currentUser
+    }
+}
+
+export default connect(mapStateToProps, null)(ProfilePage)

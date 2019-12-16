@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   render() {
+  
     return (
       <div className="App">
         < Nav />
@@ -50,5 +51,11 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 

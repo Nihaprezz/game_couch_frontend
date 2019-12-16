@@ -52,8 +52,6 @@ function fetchingByGenre(genre){
     }
 }
 
-
-
 // USER SIGN UP, LOGIN AND SIGN OUT ACTIONS !!! //
 function signOut(){
     localStorage.removeItem('jwt')
@@ -110,6 +108,7 @@ function checkUser(){
     }
 }
 
+
 //logging user in with credintials they enter
 function logIn(userInfo){
     return (dispatch) => {
@@ -139,4 +138,24 @@ function changeSearch(text){
     return {type: "CHANGE_SEARCH", payload: text}
 }
 
-export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre}
+//FETCHING USER'S LIKED GAMES
+function fetchedLikedGames(games){
+    return {type: "GET_LIKED_GAMES", payload: games}
+}
+
+function fetchingLikedGames() {
+    return (dispatch) => {
+        fetch(`${HOST_URL}/user/liked_games`,{
+            headers: {
+                "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+            }
+        })
+        .then(resp => resp.json())
+        .then(games => {
+            dispatch(fetchedLikedGames(games))
+        })
+    }
+}
+
+export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
+    fetchingLikedGames}

@@ -35,10 +35,20 @@ const searchReducer = (state = "", action) => {
     }
 }
 
+const likedGamesReducer = (state = [], action) => {
+    switch(action.type) {
+        case "GET_LIKED_GAMES":
+            return action.payload
+        default: 
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
     justReleased: releasedReducer,
     currentUser: userReducer,
-    searchText: searchReducer
+    searchText: searchReducer,
+    userLikedGames: likedGamesReducer
 });
 
 export default rootReducer;

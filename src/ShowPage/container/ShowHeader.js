@@ -8,7 +8,6 @@ const button = {
 class ShowHeader extends React.Component{
 
     likeGame = (game) => {
-        console.log("attempting to like the game", game)
         
         fetch(`http://localhost:3001/game/like/${game.id}`, {
             headers: {
