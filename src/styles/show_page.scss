@@ -1,0 +1,15 @@
+@import "variables.scss";
+
+.search-page {
+    border: 5px solid $primaryColor;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 20% auto;
+}
+
+//ResultsContainer.js
+.results-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: .2fr auto;
+}

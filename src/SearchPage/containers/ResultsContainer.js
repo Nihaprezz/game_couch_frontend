@@ -7,14 +7,16 @@ class ResultsContainer extends React.Component {
 
     render(){
         return (
-            <div> 
-                This is the ResultsContainer Component
-    
-                < FilterBar />
-                <br></br>
-                {this.props.games.map(game => {
-                    return < GameCards key={game.id} gameObj={game}/>
-                })}
+            <div className="results-container"> 
+                <div className="results-filter-section">
+                    < FilterBar /> 
+                </div>
+
+                <div className="results-game-section">
+                    {this.props.games.map(game => {
+                        return < GameCards key={game.id} gameObj={game}/>
+                    })} 
+                </div>
             </div>
         )
     }
