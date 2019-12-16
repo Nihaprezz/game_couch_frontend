@@ -8,6 +8,8 @@ const releasedReducer = (state = [], action) => {
                 return action.payload
         case "TOP_GAMES_BY_YEAR":
                 return action.payload
+        case "GAMES_BY_GENRE":
+                return action.payload
         default: 
             return state;
     }

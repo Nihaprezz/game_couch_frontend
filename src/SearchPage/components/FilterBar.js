@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { fetchingTopGames } from "../../redux/actions"
+import { fetchingTopGames, fetchingByGenre } from "../../redux/actions"
 
 //FilterBar will allow users to change the genre of the games they are looking for. 
 //FilterBar will allow users to look at the best of the year games 
@@ -9,13 +9,12 @@ const genres = ["Action", "Arcade", "Adventure", "Casual", "Family", "Fighting",
 
 class FilterBar extends React.Component {
     render(){
-        console.log(this.props)
         return (
             <div>
                 <h1>Genres:</h1>
                 <div className="select">
-                    <select>
-                        <option value="">Genre</option>
+                    <select onChange={(e) => {this.props.fetchingByGenre(e.target.value)}}>
+                    <option defaultValue="" disabled selected hidden>Genre</option>
                         {genres.map(genre => {
                             return <option key={genre} value={genre}>{genre}</option>
                         })}
@@ -39,7 +38,8 @@ class FilterBar extends React.Component {
 
 const mapDispatchToProps  = (dispatch) => {
     return {
-        fetchingTopGames: (year) => {dispatch(fetchingTopGames(year))}
+        fetchingTopGames: (year) => {dispatch(fetchingTopGames(year))},
+        fetchingByGenre: (genre) => {dispatch(fetchingByGenre(genre))}
     }
 }
 

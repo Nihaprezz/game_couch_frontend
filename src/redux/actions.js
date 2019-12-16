@@ -36,6 +36,22 @@ function fetchingTopGames(year){
     }
 }
 
+//fetching games by genre picked 
+function fetchedByGenre(games){
+    return {type: "GAMES_BY_GENRE", payload: games}
+}
+
+function fetchingByGenre(genre){
+
+    return (dispatch) => {
+        fetch(`${HOST_URL}/games_by_genre/${genre.toLowerCase()}`)
+        .then(resp => resp.json())
+        .then(data => {
+            dispatch(fetchedByGenre(data.results))
+        })
+    }
+}
+
 
 
 // USER SIGN UP, LOGIN AND SIGN OUT ACTIONS !!! //
@@ -123,4 +139,4 @@ function changeSearch(text){
     return {type: "CHANGE_SEARCH", payload: text}
 }
 
-export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames}
+export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre}
