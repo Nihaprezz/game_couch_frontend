@@ -1,17 +1,17 @@
 import React from "react";
 import GameCard from "./GameCard"
 import { connect } from "react-redux"
+import gamesData from "../data.json"
 
+//imported gamesData from a hard coded json file. It beats making another fetch call
 class FeaturedGamesContainer extends React.Component{
 
     render(){
         return (
             <div>
                 This is the FeaturedGamesContainer
-                {/* WILL PROBABLY HAVE TO MANUALLY SEED THESE SHOW PAGE GAMES INSTEAD OF RELYING ON STATE , 
-                NEED GOOD LOOKING GAMES ON THE FRONT PAGE */}
-                {this.props.justReleased.slice(0,4).map(game => {
-                    return < GameCard key={game.id} gameObject={game}/>
+                {gamesData.games.map(game => {
+                    return < GameCard key={game.id} gameObject={game} />
                 })}
             </div>
         )
