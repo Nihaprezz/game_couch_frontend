@@ -1,9 +1,12 @@
 let HOST_URL = "http://localhost:3001"
 
+// FETCHING GAME INFO FROM THE BACKEND!! //
+
 function gameSearchResults(games){
     return {type: "SEARCH_RESULTS", payload: games}
 }
 
+//inital game fetch 
 function fetchedJustReleased(games) {
     return {type: "FETCH_JUST_RELEASED", payload: games.results}
   }
@@ -17,6 +20,23 @@ function fetchingJustReleased(){
       })
   }
 }
+
+//fetching top games by year it was passed 
+function fetchedTopGames(games){
+    return {type: "TOP_GAMES_BY_YEAR", payload: games}
+}
+
+function fetchingTopGames(year){
+    return (dispatch) => {
+        fetch(`${HOST_URL}/top_games/${year}`)
+        .then(resp => resp.json())
+        .then( data => {
+            dispatch(fetchedTopGames(data.results))
+        })
+    }
+}
+
+
 
 // USER SIGN UP, LOGIN AND SIGN OUT ACTIONS !!! //
 function signOut(){
@@ -103,4 +123,4 @@ function changeSearch(text){
     return {type: "CHANGE_SEARCH", payload: text}
 }
 
-export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults}
+export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames}
