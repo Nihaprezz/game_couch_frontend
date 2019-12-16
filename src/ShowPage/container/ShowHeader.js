@@ -19,20 +19,30 @@ class ShowHeader extends React.Component{
         })
         .then(res => res.json())
         .then(data => {
-            if (data.message === "Already Liked!"){
-                Swal.fire({
-                    title: 'Already Liked!',
-                    text: 'Browse more games!',
-                    icon: 'error',
-                    confirmButtonText: 'Back'
-                })
-            } else  {
-                Swal.fire({
-                    title: 'Added!',
-                    text: 'Game has been added',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                })
+            switch(data.message) {
+                case "Already Liked!":
+                    Swal.fire({
+                        title: 'Already Liked!',
+                        text: 'Browse more games!',
+                        icon: 'error',
+                        confirmButtonText: 'Back'
+                    })
+                    break;
+                case "Please log in":
+                    Swal.fire({
+                        title: `${data.message}`,
+                        text: 'Login or Signup',
+                        icon: 'error',
+                        confirmButtonText: 'Back'
+                    })
+                    break;
+                default:
+                    Swal.fire({
+                        title: 'Added!',
+                        text: 'Game has been added',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
             }
         })   
     }
