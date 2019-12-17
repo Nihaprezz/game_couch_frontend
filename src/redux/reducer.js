@@ -53,12 +53,22 @@ const friendsReducer = (state =[], action) => {
     }
 }
 
+const allPostsReducer = (state = [], action ) => {
+    switch(action.type) {
+        case "GET_RELATED_POSTS":
+            return action.payload
+        default:
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
     justReleased: releasedReducer,
     currentUser: userReducer,
     searchText: searchReducer,
     userLikedGames: likedGamesReducer,
-    usersFriends: friendsReducer
+    usersFriends: friendsReducer,
+    allPosts: allPostsReducer
 });
 
 export default rootReducer;

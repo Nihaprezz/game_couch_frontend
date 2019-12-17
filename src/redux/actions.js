@@ -160,6 +160,7 @@ function fetchedFriends(friends){
     return {type: "GET_FRIENDS", payload: friends}
 }
 
+//FETCHING THE USER FRIENDS AND POSTS 
 function fetchingAllUserInfo() {
     return (dispatch) => {
         fetch(`${HOST_URL}/user/all_info`,{
@@ -175,5 +176,13 @@ function fetchingAllUserInfo() {
     }
 }
 
+//FETCHING THE USERS POST AND THEIR FRIENDS POST
+function setAllRelatedPosts(posts) {
+    return {type: "GET_RELATED_POSTS", payload: posts}
+}
+
+
+
+
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingAllUserInfo}
+    fetchingAllUserInfo, setAllRelatedPosts}
