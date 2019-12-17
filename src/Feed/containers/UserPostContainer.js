@@ -1,20 +1,80 @@
 import React from "react";
+import { connect } from "react-redux"
 
 class UserPostContainer extends React.Component {
+    constructor(){
+        super()
+
+        this.state = {
+            newPost: ""
+        }
+    }
+
+    onChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    onSubmit = () => {
+        console.log(this.state.newPost)
+        if (this.state.newPost !== "") {
+            fetch("http://localhost:3001/posts",{
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+                },
+                body: JSON.stringify({
+                    content: this.state.newPost
+                })
+            })
+            .then(resp => resp.json())
+            .then(newPost => {
+                console.log(newPost)
+                //Will have to eventually push this new post into an array 
+            })
+            //quick way to reset the field of the text area
+            this.setState({newPost: ""})
+        } else {
+            alert('Post cannot be empty!')
+        }
+    }
 
     render(){
-        return (
-            <div className="user-avatar-post-container">
-                This is the UserPostContainer, will contain avatar and create post form
-                <div className="feed-avatar-container">
-                    {/* Profile Avatar will go here  */}
-                    <img></img> 
-                </div>
+        let {username, avatar } = this.props.user
 
-                
-            </div>
+        return (
+
+                <div className="user-avatar-post-container">
+                    <div className="feed-page-user-details">
+                        <div className="feed-avatar-container">
+                        <img alt="users profile" src={`${avatar}`}></img>
+                        </div>
+                        <h1>{username}</h1> 
+                    </div>
+
+                    <div className="feed-create-post-container">
+                        <p>New Post :</p>
+                        <textarea onChange={(e) => this.onChange(e)}
+                        id="textarea-new-post"
+                        className="textarea" name="newPost" placeholder="Enter Post"
+                        value={this.state.newPost}></textarea>
+                        <br></br>
+                        <button onClick={() => this.onSubmit()}
+                        className="button">Create</button>
+                    </div>
+
+                </div>
         )
     }
 }
 
-export default UserPostContainer
+const mapStateToProps = state => {
+    return {
+        user: state.currentUser
+    }
+}
+
+export default connect(mapStateToProps, null)(UserPostContainer)
