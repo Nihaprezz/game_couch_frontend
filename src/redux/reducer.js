@@ -59,6 +59,12 @@ const allPostsReducer = (state = [], action ) => {
             return action.payload
         case "ADD_TO_POSTS":
             return [...state, action.payload]
+        case "SEARCH_POSTS":
+            let copy = [...state]
+            let filtered = copy.filter(post => {
+                return post.post_content.includes(action.payload)
+            })
+            return filtered
         default:
             return state
     }

@@ -185,8 +185,13 @@ function addingToAllPosts(posts) {
     return {type: "ADD_TO_POSTS", payload: posts}
 }
 
+//SEARCHING THROUGH ALL POSTS
+function searchPosts(searchText) {
+    return {type: "SEARCH_POSTS", payload: searchText}
+}
+
 
 
 
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts}
+    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts}

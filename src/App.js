@@ -11,6 +11,7 @@ import Show from "./ShowPage/ShowPageContainer"
 import ProfilePage from "./Profile/ProfilePage"
 import FeedPage from "./Feed/FeedPage"
 import LoginPage from "./Login/LoginPage"
+import UserPage from "./Non-User/UserPage"
 
 
 class App extends Component {
@@ -23,7 +24,6 @@ class App extends Component {
   }
 
   render() {
-  
     return (
       <div className="App">
         < Nav />
@@ -36,6 +36,15 @@ class App extends Component {
              return  < Show gameID={gameID}/> 
           }}/>
           < Route exact path="/profile" component={ProfilePage}/>
+          < Route exact path="/user/:id" render={(props) => {
+            let profileId = props.match.params.id
+            let userId = this.props.currentUser.id
+            if (userId === parseInt(profileId)){
+              return < ProfilePage />
+            } else {
+              return < UserPage profileId={profileId}/>
+            }
+          }} />
           < Route exact path="/feed" component={FeedPage}/>
           < Route exact path="/login" component={LoginPage}/> 
         </Switch>

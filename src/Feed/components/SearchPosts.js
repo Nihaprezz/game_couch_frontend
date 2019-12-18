@@ -5,8 +5,15 @@ class SearchPosts extends React.Component {
     render(){
         return (
             <div>
-                This is the SearchPosts Component, will have the search input 
-                
+                <div className="field">
+                    <p className="control has-icons-left">
+                        <input onChange={(e) => {this.props.updateSearch(e)}}
+                        className="input" name="searchText" type="text" placeholder="Search Posts"/>
+                        <span className="icon is-small is-left">
+                        <i className="fas fa-search"></i>
+                        </span>
+                    </p>
+                </div>
             </div>
         )
     }
