@@ -57,6 +57,8 @@ const allPostsReducer = (state = [], action ) => {
     switch(action.type) {
         case "GET_RELATED_POSTS":
             return action.payload
+        case "ADD_TO_POSTS":
+            return [...state, action.payload]
         default:
             return state
     }

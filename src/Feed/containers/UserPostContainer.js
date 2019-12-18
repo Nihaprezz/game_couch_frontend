@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux"
+import { addingToAllPosts } from "../../redux/actions"
 
 class UserPostContainer extends React.Component {
     constructor(){
@@ -17,7 +18,6 @@ class UserPostContainer extends React.Component {
     }
 
     onSubmit = () => {
-        console.log(this.state.newPost)
         if (this.state.newPost !== "") {
             fetch("http://localhost:3001/posts",{
                 method: "POST",
@@ -33,9 +33,9 @@ class UserPostContainer extends React.Component {
             .then(resp => resp.json())
             .then(newPost => {
                 console.log(newPost)
+                this.props.addingToAllPosts(newPost)
                 //Will have to eventually push this new post into an array 
             })
-            //quick way to reset the field of the text area
             this.setState({newPost: ""})
         } else {
             alert('Post cannot be empty!')
@@ -71,10 +71,18 @@ class UserPostContainer extends React.Component {
     }
 }
 
+
+const mapDispatchToState = (dispatch) => {
+    return {
+        addingToAllPosts: (post) => {dispatch(addingToAllPosts(post))}
+    }
+}
+
 const mapStateToProps = state => {
     return {
         user: state.currentUser
     }
 }
 
-export default connect(mapStateToProps, null)(UserPostContainer)
+
+export default connect(mapStateToProps, mapDispatchToState)(UserPostContainer)

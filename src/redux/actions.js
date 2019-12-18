@@ -176,13 +176,17 @@ function fetchingAllUserInfo() {
     }
 }
 
-//FETCHING THE USERS POST AND THEIR FRIENDS POST
+//SETTING THE USER AND FRIENDS POST FROM THE FETCH
 function setAllRelatedPosts(posts) {
     return {type: "GET_RELATED_POSTS", payload: posts}
+}
+
+function addingToAllPosts(posts) {
+    return {type: "ADD_TO_POSTS", payload: posts}
 }
 
 
 
 
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingAllUserInfo, setAllRelatedPosts}
+    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts}
