@@ -53,15 +53,18 @@ const friendsReducer = (state =[], action) => {
     }
 }
 
+let copyOfPosts;
+
 const allPostsReducer = (state = [], action ) => {
     switch(action.type) {
         case "GET_RELATED_POSTS":
+            copyOfPosts = action.payload
             return action.payload
         case "ADD_TO_POSTS":
+            copyOfPosts = [...copyOfPosts, action.payload]
             return [...state, action.payload]
         case "SEARCH_POSTS":
-            let copy = [...state]
-            let filtered = copy.filter(post => {
+            let filtered = copyOfPosts.filter(post => {
                 return post.post_content.includes(action.payload)
             })
             return filtered
