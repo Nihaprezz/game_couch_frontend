@@ -48,6 +48,8 @@ const friendsReducer = (state =[], action) => {
     switch(action.type) {
         case "GET_FRIENDS":
             return action.payload
+        case "NEW_FRIEND":
+            return [...state, action.payload]
         default:
             return state
     }

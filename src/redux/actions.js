@@ -160,6 +160,11 @@ function fetchedFriends(friends){
     return {type: "GET_FRIENDS", payload: friends}
 }
 
+//ADDING TO THE FRIENDS ARRAY IN STORE WHEN NEW FRIEND/FOLLOWEE IS MADE
+function addNewFriend(friend){
+    return {type: "NEW_FRIEND", payload: friend}
+}
+
 //FETCHING THE USER FRIENDS AND POSTS 
 function fetchingAllUserInfo() {
     return (dispatch) => {
@@ -194,4 +199,4 @@ function searchPosts(searchText) {
 
 
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts}
+    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts, addNewFriend}

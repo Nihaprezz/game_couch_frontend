@@ -1,6 +1,24 @@
 import React from "react"
+import { connect } from "react-redux"
+import { addNewFriend } from "../../redux/actions"
 
 class UserHeader extends React.Component {
+
+    followUser = () => {
+        fetch(`http://localhost:3001/friend/${this.props.userObj.id}`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json", 
+                "Accept": "application/json",
+                "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+            }
+        })
+        .then( resp => resp.json())
+        .then( newFriend => {
+            console.log(newFriend)
+            this.props.addNewFriend(newFriend.friend)
+        })
+    }
 
     render(){
         let {username, avatar, bio, favorite_genre, location} = this.props.userObj
@@ -15,9 +33,18 @@ class UserHeader extends React.Component {
                 <p>Favorite Genre: {favorite_genre === "" ? "No Genre Picked" : favorite_genre}</p>
                 <p>Location: {location}</p>
                 <p>Following: {this.props.friends.length} </p>
+                <br></br>
+                <button onClick={() => {this.followUser()}}
+                className="button is-dark">Follow User</button>
             </div>
         )
     }
 }
 
-export default UserHeader
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addNewFriend: (friend) => {dispatch(addNewFriend(friend))}
+    }
+}
+
+export default connect(null, mapDispatchToProps)(UserHeader)
