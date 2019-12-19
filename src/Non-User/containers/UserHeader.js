@@ -23,6 +23,12 @@ class UserHeader extends React.Component {
     render(){
         let {username, avatar, bio, favorite_genre, location} = this.props.userObj
 
+        let checkUser = this.props.usersFriends.filter( friend => {
+            return friend.id === this.props.userObj.id
+        })
+
+        console.log(checkUser)
+
         return (
             <div className="profile-header">
                 <h1>Username : {username}</h1>
@@ -34,8 +40,10 @@ class UserHeader extends React.Component {
                 <p>Location: {location}</p>
                 <p>Following: {this.props.friends.length} </p>
                 <br></br>
-                <button onClick={() => {this.followUser()}}
-                className="button is-dark">Follow User</button>
+                {checkUser.length === 1 ? <button className="button is-success"> Already Following </button> : (
+                              <button onClick={() => {this.followUser()}}
+                              className="button is-dark">Follow User</button>
+                )}
             </div>
         )
     }
@@ -47,4 +55,11 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(UserHeader)
+const mapStateToProps = state => {
+    return {
+        usersFriends: state.usersFriends
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserHeader)
