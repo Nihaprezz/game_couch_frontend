@@ -35,7 +35,11 @@ class App extends Component {
             let gameID = props.match.params.id 
              return  < Show gameID={gameID}/> 
           }}/>
-          < Route exact path="/profile" component={ProfilePage}/>
+            < Route exact path="/profile" component={() => {
+              return this.props.currentUser.length === 0 ? < Redirect to="/login"/> : < ProfilePage /> 
+            }}/> 
+  
+
           < Route exact path="/user/:id" render={(props) => {
             let profileId = props.match.params.id
             let userId = this.props.currentUser.id
@@ -45,8 +49,14 @@ class App extends Component {
               return < UserPage profileId={profileId}/>
             }
           }} />
-          < Route exact path="/feed" component={FeedPage}/>
-          < Route exact path="/login" component={LoginPage}/> 
+
+          < Route exact path="/feed" render={() => {
+            return this.props.currentUser.length === 0 ? < Redirect to="/login"/> : < FeedPage /> 
+          }}/>
+
+          < Route exact path="/login" render={() => {
+            return this.props.currentUser.length === 0 ? < LoginPage /> : < Redirect to="/"/>
+          }}/> 
         </Switch>
       </div>
     )
