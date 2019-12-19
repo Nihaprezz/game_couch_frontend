@@ -36,7 +36,7 @@ class ShowDetails extends React.Component{
                 </div>
 
                 {/* this is where the video game reviews will be rendering */}
-                < GameReviesContainer />
+                < GameReviesContainer showGame={this.props.showGame} />
 
                 <Link to="/games" className="button is-primary">Back To Games</Link>
             </div>

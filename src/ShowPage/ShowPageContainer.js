@@ -44,7 +44,7 @@ class ShowPageContainer extends React.Component {
                 {!this.state.showGame.name ? <LoadingSpinerComponent/> : (
                     <div>
                     < ShowHeader movieObj={this.state.showGame} screenShots={this.state.gameScreenShots}/> 
-                    < ShowDetails movieObj={this.state.showGame}/>
+                    < ShowDetails movieObj={this.state.showGame} showGame={this.state.showGame}/>
                     </div>
                 )}  
             </div>
