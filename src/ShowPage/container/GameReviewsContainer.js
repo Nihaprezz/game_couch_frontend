@@ -1,5 +1,6 @@
 import React from "react" ;
 import GameReview from "../component/GameReview"
+import Swal from 'sweetalert2'
 
 const test = {
     width: "40vw"
@@ -52,9 +53,18 @@ class GameReviewsContainer extends React.Component {
              })
             .then(resp => resp.json())
             .then(review => {
-                this.setState({
-                    gameReviews: [...this.state.gameReviews, review]
-                })
+                if (review.message === "Please log in"){
+                    Swal.fire({
+                        title: 'Unable to Review!',
+                        text: `${review.message}`,
+                        icon: 'error',
+                        confirmButtonText: 'Back'
+                    })
+                } else {
+                    this.setState({
+                        gameReviews: [...this.state.gameReviews, review]
+                    })
+                }
             }) 
         }
 
@@ -78,9 +88,11 @@ class GameReviewsContainer extends React.Component {
                 </div>
                 
     
-                {orderedReviews.map(review => {
-                    return < GameReview key={review.id} reviewObject={review} />
-                })}
+                {orderedReviews.length === 0 ? <h1> No Reviews. Be the first to review!</h1> : (
+                    orderedReviews.map(review => {
+                        return < GameReview key={review.id} reviewObject={review} />
+                    })
+                )}
             </div>
             
         )

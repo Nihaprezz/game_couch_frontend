@@ -1,10 +1,12 @@
 import React from "react"
 import { connect } from "react-redux"
 import { addNewFriend } from "../../redux/actions"
+import Swal from 'sweetalert2'
 
 class UserHeader extends React.Component {
 
     followUser = () => {
+        
         fetch(`http://localhost:3001/friend/${this.props.userObj.id}`, {
             method: "POST", 
             headers: {
@@ -15,7 +17,16 @@ class UserHeader extends React.Component {
         })
         .then( resp => resp.json())
         .then( newFriend => {
-            this.props.addNewFriend(newFriend.friend)
+            if (newFriend.message === "Please log in"){
+                Swal.fire({
+                    title: 'Unable to Login!',
+                    text: `${newFriend.message}`,
+                    icon: 'error',
+                    confirmButtonText: 'Back'
+                })
+            } else  {
+                this.props.addNewFriend(newFriend.friend)  
+            }
         })
     }
 
@@ -26,7 +37,7 @@ class UserHeader extends React.Component {
             return friend.id === this.props.userObj.id
         })
 
-        console.log(checkUser)
+
 
         return (
             <div className="profile-header">
