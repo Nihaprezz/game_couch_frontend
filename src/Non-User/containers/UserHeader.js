@@ -15,7 +15,6 @@ class UserHeader extends React.Component {
         })
         .then( resp => resp.json())
         .then( newFriend => {
-            console.log(newFriend)
             this.props.addNewFriend(newFriend.friend)
         })
     }
