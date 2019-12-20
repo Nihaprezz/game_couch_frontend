@@ -43,6 +43,7 @@ class RecommendedContainer extends React.Component {
 
         return (
             <div>
+                <h1>Recommended Friends</h1>
                 {uniqueFriends.map( user => {
                     return < ProfileCards key={user.id} userObject={user} />
                 })}

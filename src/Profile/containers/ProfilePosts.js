@@ -22,13 +22,37 @@ class ProfilePosts extends React.Component {
             this.setState({myPosts: posts})
         })
     }
-    
+
+    deletePost = (postID) => {
+        fetch(`http://localhost:3001/posts/${postID}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+            }
+        })
+        .then(resp => resp.json())
+        .then( post => {
+            this.filterOutDeletedPost(post)
+        })
+    }
+
+    filterOutDeletedPost = (post) => {
+        let filteredPosts = this.state.myPosts.filter(myPost => {
+            return myPost.id !== post.id
+        })
+
+        this.setState({
+            myPosts: filteredPosts
+        })
+    }
+
+
     render(){
         return (
             <div> 
                 This is the ProfilePosts Comp
                 {this.state.myPosts.slice(0,6).map(post => {
-                    return < Post key={post.id} postObject={post} />
+                    return < Post key={post.id} postObject={post} deletePost={this.deletePost} />
                 })}
             </div>
         )
