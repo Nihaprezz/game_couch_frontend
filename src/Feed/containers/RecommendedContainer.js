@@ -1,5 +1,6 @@
 import React from "react";
 import ProfileCards from "../components/ProfileCard"
+import UserSearch from "./UserSearch"
 import { connect } from "react-redux"
 import { fetchingAllUserInfo } from "../../redux/actions"
 
@@ -8,7 +9,8 @@ class RecommendedContainer extends React.Component {
         super();
 
         this.state  = {
-            alikeUsers: []
+            alikeUsers: [],
+            displaySearch: false
         }
     }
 
@@ -24,6 +26,10 @@ class RecommendedContainer extends React.Component {
         })
 
         this.props.fetchingAllUserInfo()
+    }
+
+    switchToSearch = () => {
+        this.setState({ displaySearch: !this.state.displaySearch })
     }
 
     render(){
@@ -43,10 +49,18 @@ class RecommendedContainer extends React.Component {
 
         return (
             <div>
-                <h1>Recommended Friends</h1>
-                {uniqueFriends.map( user => {
-                    return < ProfileCards key={user.id} userObject={user} />
-                })}
+                {this.state.displaySearch ? < UserSearch switch={this.switchToSearch} /> : (
+                    <div className="recommended-friends-container">
+                        <h1>Recommended Friends</h1>
+
+                        {/*eslint-disable-next-line*/}
+                        <div>or <a onClick={() => {this.switchToSearch()}}>Search for User</a></div>
+
+                        {uniqueFriends.map( user => {
+                            return < ProfileCards key={user.id} userObject={user} />
+                        })} 
+                    </div>
+                )}
             </div>
         )
     }

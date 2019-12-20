@@ -19,7 +19,7 @@ class Nav extends React.Component {
                 {!Array.isArray(this.props.currentUser) ? (
                 <React.Fragment>
                     < Link className="button is-primary" to="/profile">
-                        Profile
+                    {this.props.currentUser.username}'s Profile
                     </Link> 
 
                     <Link className="button is-primary" to="/feed">
