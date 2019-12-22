@@ -2,7 +2,6 @@ import React from "react"
 import { connect } from "react-redux"
 
 class ProfileHeader extends React.Component {
-    
 
     render(){
         let {username, bio, avatar, favorite_genre, location} = this.props.currentUser
