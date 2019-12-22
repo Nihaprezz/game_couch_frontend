@@ -1,0 +1,45 @@
+
+.home-page-container {
+    height: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35% auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+//HOME PAGE HEADER
+.homepage-header{
+    background-image: url("../styles/pictures/gaming-background-1.jpeg" );
+    background-position: top left;
+    background-color :hsl(0, 0%, 7%);
+    display: grid; 
+}
+
+.title-container {
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+}
+
+.title-container h1{
+    color: white;
+    font-size: 5.5em;
+    margin-bottom: 1.4vh;
+    letter-spacing: 2px;
+    text-shadow: 8px 9px 16px black;
+}
+
+.title-container p {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    text-shadow: 8px 9px 16px black
+}
+
+.title-container button {
+    margin-top: 1vh;
+}
+
+
