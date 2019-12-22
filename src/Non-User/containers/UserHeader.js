@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { addNewFriend } from "../../redux/actions"
+import { addNewFriend, removeFriend } from "../../redux/actions"
 import Swal from 'sweetalert2'
 
 class UserHeader extends React.Component {
@@ -30,6 +30,21 @@ class UserHeader extends React.Component {
         })
     }
 
+    unfollowUser = () => {
+        fetch(`http://localhost:3001/friend/${this.props.userObj.id}`, {
+            method: "DELETE", 
+            headers: {
+                "Content-Type": "application/json", 
+                "Accept": "application/json",
+                "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+            }
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            this.props.removeFriend(data)
+        })
+    }
+
     render(){
         let {username, avatar, bio, favorite_genre, location} = this.props.userObj
 
@@ -38,7 +53,7 @@ class UserHeader extends React.Component {
         })
 
 
-
+        console.log(checkUser)
         return (
             <div className="profile-header">
                 <h1>Username : {username}</h1>
@@ -50,9 +65,12 @@ class UserHeader extends React.Component {
                 <p>Location: {location}</p>
                 <p>Following: {this.props.friends.length} </p>
                 <br></br>
-                {checkUser.length === 1 ? <button className="button is-success"> Already Following </button> : (
-                              <button onClick={() => {this.followUser()}}
-                              className="button is-dark">Follow User</button>
+                {checkUser.length === 1 ? (
+                    <button onClick={() => {this.unfollowUser()}}
+                    className="button is-success"> Already Following </button> 
+                ): (
+                    <button onClick={() => {this.followUser()}}
+                    className="button is-dark">Follow User</button>
                 )}
             </div>
         )
@@ -61,7 +79,8 @@ class UserHeader extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addNewFriend: (friend) => {dispatch(addNewFriend(friend))}
+        addNewFriend: (friend) => {dispatch(addNewFriend(friend))}, //dispatch to add friend to array in store
+        removeFriend: (friend) => {dispatch(removeFriend(friend))}  //dispatch to remove friend from array in store
     }
 }
 

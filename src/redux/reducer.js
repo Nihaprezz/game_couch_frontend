@@ -50,6 +50,9 @@ const friendsReducer = (state =[], action) => {
             return action.payload
         case "NEW_FRIEND":
             return [...state, action.payload]
+        case "REMOVE_FRIEND":
+            let updatedFriends = [...state].filter(friend => friend.id !== action.payload.friend_id)
+            return updatedFriends
         default:
             return state
     }

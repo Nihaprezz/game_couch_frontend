@@ -8,7 +8,6 @@ const reSize = {
 
 class ResultsProfile extends React.Component {
     render(){
-        console.log(this.props)
         return (
             <div>
                {this.props.results.message ? (

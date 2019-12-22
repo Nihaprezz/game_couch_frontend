@@ -165,6 +165,11 @@ function addNewFriend(friend){
     return {type: "NEW_FRIEND", payload: friend}
 }
 
+//REMOVING FRIEND FROM ARRAY IN STATE WHEN THE USER UNFOLLOWS AND DESTROY METHOD IS RESOLVED
+function removeFriend(friend){
+    return {type: "REMOVE_FRIEND", payload: friend}
+}
+
 //FETCHING THE USER FRIENDS AND POSTS 
 function fetchingAllUserInfo() {
     return (dispatch) => {
@@ -195,8 +200,5 @@ function searchPosts(searchText) {
     return {type: "SEARCH_POSTS", payload: searchText}
 }
 
-
-
-
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts, addNewFriend}
+    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts, addNewFriend, removeFriend}
