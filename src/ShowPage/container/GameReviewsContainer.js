@@ -68,8 +68,24 @@ class GameReviewsContainer extends React.Component {
             }) 
         }
 
-        //Quick way to clear out the form.. Pretty sure this is not best practice.
-        document.querySelector("#textarea-game-review").value = ""
+        //Resetting the game review text area
+        this.setState({review: ""})
+    }
+
+    deleteReview = (id) => {
+        fetch(`http://localhost:3001/review/${id}`, {
+            method: "DELETE", 
+            headers: {
+                "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+            }
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            let updatedReviews = [...this.state.gameReviews].filter(review => review.id !== data.id)
+            this.setState({gameReviews: updatedReviews})
+        })
+
+        
     }
 
     render() {
@@ -90,7 +106,7 @@ class GameReviewsContainer extends React.Component {
     
                 {orderedReviews.length === 0 ? <h1> No Reviews. Be the first to review!</h1> : (
                     orderedReviews.map(review => {
-                        return < GameReview key={review.id} reviewObject={review} />
+                        return < GameReview key={review.id} reviewObject={review} deleteReview={this.deleteReview} />
                     })
                 )}
             </div>
