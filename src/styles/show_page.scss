@@ -49,7 +49,7 @@
 
 #game-search {
     font-family: $primaryFont;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
 }
 
 #game-search:focus {
@@ -60,7 +60,7 @@
 .results-container {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: .2fr auto;
+    grid-template-columns: 10% auto;
 }
 
 //Container for genre and popular options
@@ -103,3 +103,31 @@
     font-size: 2rem;
     letter-spacing: 3px;
 }
+
+//CONTAINER FOR GAME RESULTS SECTION
+.results-game-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 15px 15px;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+}
+
+//Results Game Card
+.search-game-card {
+    transition: box-shadow .6s;
+}
+
+.search-game-card:hover {
+    box-shadow: 10px 10px 12px $black;
+}
+
+.search-game-text {
+    color: $blue;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
