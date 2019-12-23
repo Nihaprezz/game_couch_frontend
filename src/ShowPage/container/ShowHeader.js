@@ -8,7 +8,7 @@ const button = {
 class ShowHeader extends React.Component{
 
     likeGame = (game) => {
-        
+
         fetch(`http://localhost:3001/game/like/${game.id}`, {
             headers: {
                 "Authorization" : `Bearer ${localStorage.getItem('jwt')}`,
@@ -49,6 +49,7 @@ class ShowHeader extends React.Component{
     render(){
         let { background_image, name } = this.props.movieObj //named movie OBJ but should be named Game Obj... minor fix
 
+        console.log(this.props.movieObj)
         return (
             <div>
                 This is the ShowHeader
