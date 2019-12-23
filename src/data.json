@@ -13,16 +13,10 @@
         "image": "https://media.rawg.io/media/games/b0f/b0fe8b7819dc657e12d254ec240aad0e.jpg"
       },
       {
-        "id": "3",
-        "api_id": "50734",
-        "name": "Sekiro: Shadows Die Twice",
-        "image": "https://media.rawg.io/media/games/b1c/b1c27510817af1ad7d23494e07822777.jpg"
-      },
-      {
         "id": "4",
-        "api_id": "23165",
-        "name": "Mario Kart 8 Deluxe",
-        "image": "https://media.rawg.io/media/games/6f8/6f846e941c78cfbabe53cd67e55ced83.jpg"
+        "api_id": "257201",
+        "name": "Star Wars Jedi: Fallen Order",
+        "image": "https://media.rawg.io/media/games/2cc/2ccb3faee462619e65884711c5ec2ff6.jpg"
       }  
     ]
 }

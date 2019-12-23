@@ -8,7 +8,7 @@ class HomePageHeader extends React.Component {
                 <div className="title-container">
                     <h1>The Game Couch</h1>
                     <p>A gaming community for you and your friends.</p>
-                    <button className="button is-black">Browse</button>
+                    <button className="button home-browse">Browse</button>
                     {/* Photo by Nick Hamze on Unsplash */}
                 </div>
             </div>

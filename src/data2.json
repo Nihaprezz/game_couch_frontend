@@ -1,0 +1,22 @@
+{
+    "games": [
+      {
+        "id": "1",
+        "api_id": "28",
+        "name": "Red Dead Redemption 2",
+        "image": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+      },
+      {
+        "id": "2",
+        "api_id": "22511",
+        "name": "The Legend of Zelda: Breath of the Wild",
+        "image": "https://media.rawg.io/media/games/cc1/cc196a5ad763955d6532cdba236f730c.jpg"
+      },
+      {
+        "id": "4",
+        "api_id": "58175",
+        "name": "God of War",
+        "image": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+      }  
+    ]
+}

@@ -8,11 +8,16 @@ class FeaturedGamesContainer extends React.Component{
 
     render(){
         return (
-            <div>
-                This is the FeaturedGamesContainer
-                {gamesData.games.map(game => {
-                    return < GameCard key={game.id} gameObject={game} />
-                })}
+            <div className="featured-container">
+                <div className="featured-header">
+                    <h1 className="featured-text is-size-1">Featured Games</h1>
+                </div>
+                
+                <div className="featured-games">
+                    {gamesData.games.map(game => {
+                        return < GameCard key={game.id} gameObject={game} />
+                    })}  
+                </div>
             </div>
         )
     }

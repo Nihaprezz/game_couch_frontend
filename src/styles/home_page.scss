@@ -1,3 +1,4 @@
+@import "variables.scss";
 
 .home-page-container {
     height: 80vw;
@@ -42,4 +43,72 @@
     margin-top: 1vh;
 }
 
+//button styling 
+.home-browse {
+    background: $black;
+    color: $blue;
+    font-weight: bold;
+}
 
+//FEATURED GAMES STYLING
+.featured-header {
+    margin-top: 2vh;
+}
+
+.featured-text {
+    color: $black;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-family: $primaryFont;
+}
+
+.featured-games {
+    margin-top: 2vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 3%;
+}
+
+
+//GAME CARDS
+.featured-gamecards-container{
+    transition: box-shadow .6s;
+}
+
+.featured-gamecards-container:hover {
+    // border: 5px solid red;
+    box-shadow: 8px 8px 10px $black;
+}
+
+.game-cards-name-container {
+    padding-bottom: 0.8vh;
+}
+
+.home-game-links {
+    color: $blue;
+    font-weight: bold;
+    font-family: $primaryFont;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+
+//FOOTER STYLING 
+footer {
+    margin-top: 3.5vh;
+    color: white;
+    background: $black;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.rawg-text {
+    color: white;
+}
+
+.rawg-text:hover {
+    color: $blue;
+}

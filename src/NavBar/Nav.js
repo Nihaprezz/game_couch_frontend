@@ -2,44 +2,52 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import { signOut } from "../redux/actions"
+import "../styles/nav_bar.scss"
 
 class Nav extends React.Component {
 
     render(){
         return (
             <div className="buttons">
-                < Link className="button is-primary" to="/home">
-                     Home 
-                </Link>
-                < Link className="button is-primary" to="/games"> 
-                    Games 
-                </Link>
+                <div className="nav-left">
+                    < Link className="nav-item" to="/home">
+                        Home 
+                    </Link>
+                    < Link className="nav-item" to="/games"> 
+                        Games
+                    </Link>  
+                </div>
+
 
                 {/* Logic to handle showing links. Fragment used for React to stop erroring with JSX returns */}
-                {!Array.isArray(this.props.currentUser) ? (
-                <React.Fragment>
-                    < Link className="button is-primary" to="/profile">
-                    {this.props.currentUser.username}'s Profile
-                    </Link> 
+                <div className="right-nav-links">
+                    {!Array.isArray(this.props.currentUser) ? (
+                    <React.Fragment>
+                        < Link className="nav-item" to="/profile">
+                        {this.props.currentUser.username}'s Profile
+                        </Link> 
 
-                    <Link className="button is-primary" to="/feed">
-                        Feed
-                    </Link> 
-                </React.Fragment>
-                ): null}
+                        <Link className="nav-item" to="/feed">
+                            Feed
+                        </Link> 
+                    </React.Fragment>
+                    ): null}
 
 
-                {!Array.isArray(this.props.currentUser) ? (
-                    // eslint-disable-next-line
-                    <a onClick={() => this.props.signOut()}
-                    className="button is-primary">
-                        Sign Out
-                    </a>
-                ): (
-                    <Link className="button is-primary" to="/login">
-                        Login
-                    </Link>
-                )}
+                    {!Array.isArray(this.props.currentUser) ? (
+                        // eslint-disable-next-line
+                        <a onClick={() => this.props.signOut()}
+                        className="nav-item">
+                            Sign Out
+                        </a>
+                    ): (
+                        <Link className="nav-item" to="/login">
+                            Login
+                        </Link>
+                    )}   
+                </div>
+
+                
 
             </div>
         )
