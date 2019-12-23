@@ -31,13 +31,21 @@ class SearchBarContainer extends React.Component {
 
     render(){
         return (
-            <form onSubmit={this.handleSearchSubmit}
-            className="field has-addons">
-                <div className="control">
-                    <input onChange={(e) => this.onSearchChange(e)}
-                    id="game-search" className="input" type="text" name="Search" placeholder="Search..."/>
+            <div className="game-search-container">
+                <div className="game-search-text">
+                    <h1>Search Games by Title</h1>
                 </div>
-            </form>
+                
+                <div className="game-search-input">
+                    <form onSubmit={this.handleSearchSubmit}
+                    className="field has-addons">
+                        <div className="control control-search">
+                            <input onChange={(e) => this.onSearchChange(e)}
+                            id="game-search" className="input" type="text" name="Search" placeholder="Search Games..."/>
+                        </div>
+                    </form>
+                </div>
+            </div>
         )
     }
 }

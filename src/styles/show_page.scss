@@ -1,10 +1,59 @@
 @import "variables.scss";
 
+//SEARCH PAGE STYLING
 .search-page {
-    border: 5px solid $primaryColor;
     display: grid;
     height: 100vh;
     grid-template-rows: 20% auto;
+}
+
+.game-search-container {
+    // Photo by Ryan Quintal on Unsplash
+    background: url("../styles/pictures/showPage/GameSearch.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: grid;
+    grid-template-rows: 20% auto;
+    grid-template-columns: 10% auto 10%;
+    grid-template-areas: 
+    ". header ."
+    ". search .";
+    justify-items: center;
+    align-items: center;
+}
+
+.game-search-text {
+    grid-area: header;
+    color: white;
+}
+
+.game-search-text h1 {
+    margin-top: 1vw;
+    font-size: 2.7rem;
+    font-family: $primaryFont;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 8px 8px 10px $black;
+}
+
+//Search Input
+
+.game-search-input {
+    grid-area: search;
+}
+
+.control-search {
+    width: 50vw;
+}
+
+#game-search {
+    font-family: $primaryFont;
+    letter-spacing: 3px;
+}
+
+#game-search:focus {
+    box-shadow: 0 0 10px $blue;
 }
 
 //ResultsContainer.js
@@ -12,4 +61,45 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: .2fr auto;
+}
+
+//Container for genre and popular options
+.results-filter-section {
+    // margin-top: 2vh;
+    background: $black
+}
+
+.search-filters-container {
+    // border: 10px solid blue;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.genre-container {
+    align-self: center;
+}
+
+.genre-container h1 {
+    color: $blue;
+    font-family: $primaryFont;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    padding-bottom: 2%;
+}
+
+.popular-options-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-row-gap: 10px;
+}
+
+.popular-text {
+    color: $blue;
+    font-family: $primaryFont;
+    font-size: 2rem;
+    letter-spacing: 3px;
 }

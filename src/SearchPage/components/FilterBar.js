@@ -10,26 +10,29 @@ const genres = ["Action", "Arcade", "Adventure", "Casual", "Family", "Fighting",
 class FilterBar extends React.Component {
     render(){
         return (
-            <div>
-                <h1>Genres:</h1>
-                <div className="select">
-                    <select onChange={(e) => {this.props.fetchingByGenre(e.target.value)}}>
-                    <option defaultValue="" disabled selected hidden>Genre</option>
+            <div className="search-filters-container">
+                <div className="genre-container">
+                    <h1>Genres:</h1>
+                    <div className="select">
+                        <select onChange={(e) => {this.props.fetchingByGenre(e.target.value)}}>
+                        <option defaultValue="" disabled selected hidden>Genre</option>
                         {genres.map(genre => {
                             return <option key={genre} value={genre}>{genre}</option>
                         })}
-                    </select>
+                        </select>
+                    </div>  
                 </div>
 
-                <div>
+
+                <div className="popular-options-container">
                     {/* Popular links will go here */}
-                    <h1>Popular </h1>
+                    <h1 className="popular-text">Popular </h1>
                     <button onClick={() => {this.props.fetchingTopGames("2019")}}
-                    className="button is-white">2019 Top Games</button>
+                    className="button is-link">2019 Top Games</button>
                     <button onClick={() => {this.props.fetchingTopGames("2018")}}
-                    className="button is-white">2018 Top Games</button>
+                    className="button is-link">2018 Top Games</button>
                     <button onClick={() => {this.props.fetchingTopGames("2017")}}
-                    className="button is-white">2017 Top Games</button>
+                    className="button is-link">2017 Top Games</button>
                 </div>
             </div>
         )
