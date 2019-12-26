@@ -1,13 +1,55 @@
 @import "variables.scss";
 
 .feed-page-container {
-    border: 3px solid green;
+    border-top: 3px solid $blue;
     display: grid;
     grid-template-columns: 20% auto 20%;
     grid-template-rows: 1fr;
     grid-template-areas: "user posts recommended";
+    height: 100vw;
+    background: $black;
+    font-family: $primaryFont;
 }
 
 .user-avatar-post-container {
     grid-area: user;
+    margin-top: 3%;
+}
+
+
+//avatar picture
+.feed-page-user-details {
+    margin-top: 3%;
+}
+
+.feed-page-user-details h1 {
+    color: white;
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: .2vw;
+    text-transform: uppercase;
+}
+
+#avatar-post-divider {
+    width: 80%;
+    margin: 1rem auto
+}
+
+.feed-avatar-container img {
+    border-radius: 50%;
+    max-width: 70% !important;
+}
+
+//create post container 
+.feed-create-post-container {
+    width: 80%;
+    margin: auto;
+}
+
+.feed-create-post-container p {
+    color: $blue;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 3%;
 }

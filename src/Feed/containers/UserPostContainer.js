@@ -50,10 +50,12 @@ class UserPostContainer extends React.Component {
                 <div className="user-avatar-post-container">
                     <div className="feed-page-user-details">
                         <div className="feed-avatar-container">
-                        <img alt="users profile" src={`${avatar}`}></img>
+                            <img alt="users profile" src={`${avatar}`}></img>
                         </div>
                         <h1>{username}</h1> 
                     </div>
+
+                    <hr id="avatar-post-divider"></hr>
 
                     <div className="feed-create-post-container">
                         <p>New Post :</p>
@@ -63,7 +65,7 @@ class UserPostContainer extends React.Component {
                         value={this.state.newPost}></textarea>
                         <br></br>
                         <button onClick={() => this.onSubmit()}
-                        className="button">Create</button>
+                        className="button is-link is-rounded">Create</button>
                     </div>
 
                 </div>
