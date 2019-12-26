@@ -8,13 +8,19 @@ const button = {
 class ShowHeader extends React.Component{
 
     likeGame = (game) => {
+        let gameName = game.name.toString() //<-- just in case the game name isn't a string
 
         fetch(`http://localhost:3001/game/like/${game.id}`, {
+            method: "POST",
             headers: {
                 "Authorization" : `Bearer ${localStorage.getItem('jwt')}`,
-                "Game-Name": `${game.name}`,
-                "Image": `${game.background_image}`
-            }
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            },
+            body: JSON.stringify({
+                name: gameName,
+                image: game.background_image
+            })
         })
         .then(res => res.json())
         .then(data => {
