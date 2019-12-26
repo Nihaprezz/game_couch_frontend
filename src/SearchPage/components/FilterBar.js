@@ -10,7 +10,8 @@ const genres = ["Action", "Arcade", "Adventure", "Casual", "Family", "Fighting",
 class FilterBar extends React.Component {
     render(){
         return (
-            <div className="search-filters-container">
+            // <div className="search-filters-container">
+            <React.Fragment>
                 <div className="genre-container">
                     <h1>Genres:</h1>
                     <div className="select">
@@ -34,7 +35,8 @@ class FilterBar extends React.Component {
                     <button onClick={() => {this.props.fetchingTopGames("2017")}}
                     className="button is-link">2017 Top Games</button>
                 </div>
-            </div>
+            </React.Fragment>
+            // </div>
         )
     }
 }

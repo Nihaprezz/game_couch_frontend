@@ -60,7 +60,7 @@
 .results-container {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 10% auto;
+    grid-template-columns: 16% auto;
 }
 
 //Container for genre and popular options
@@ -69,12 +69,11 @@
     background: $black
 }
 
-.search-filters-container {
-    // border: 10px solid blue;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-}
+// .search-filters-container { MAY NOT NEED... GRID CONTAINER FOR POPULAR BUTTONS DIV
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 1fr 1fr;
+// }
 
 .genre-container {
     align-self: center;
