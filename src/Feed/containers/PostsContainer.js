@@ -4,6 +4,10 @@ import Posts from "../components/Posts"
 import { connect } from "react-redux"
 import { searchPosts } from "../../redux/actions"
 
+const margin = {
+    marginTop: '3%'
+}
+
 class PostsContainer extends React.Component {
     constructor(){
         super();
@@ -32,8 +36,7 @@ class PostsContainer extends React.Component {
 
 
         return (
-            <div>
-                This is the PostsContainer Component
+            <div style={margin}>
                 < SearchPosts updateSearch={this.updateSearch}/>
                 {orderedPost.slice(0,6).map(post => {
                     return < Posts key={post.post_id} postObj={post} />

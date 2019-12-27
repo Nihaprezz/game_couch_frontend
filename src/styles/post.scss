@@ -1,0 +1,47 @@
+@import "variables.scss";
+
+.post-container {
+    border: 5px solid #2f445a;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: .5fr 1fr;
+    grid-template-areas: "image details";
+    margin-top: 2%;
+
+    padding: 10px;
+    width: 80%;
+    margin: 1.5% auto;
+    border-radius: 1.8em;
+    box-shadow: 0px 0px 7px $blue;
+}
+
+.post-avatar-container {
+    grid-area: image;
+    align-self: center;
+}
+
+.post-details-container {
+    grid-area: details;
+    text-align: left;
+    font-size: 1.1em;
+
+    display: grid;
+    grid-template-rows: 20% auto 20%;
+}
+
+.post-details-container a {
+    text-transform: uppercase;
+    align-self: center;
+    letter-spacing: 2px;
+}
+
+.post-details-container p {
+    color: white;
+}
+
+.post-created-on {
+    color: $blue !important;
+    font-size: 0.7rem;
+}
+
+
