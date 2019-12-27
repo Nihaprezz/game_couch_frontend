@@ -15,17 +15,17 @@ class ProfileHeader extends React.Component {
                     <p className="bio">{bio}</p>
                     <div className="stats-grouped">
                         <div>
-                          <i class="fas fa-gamepad"></i>
+                          <i className="fas fa-gamepad"></i>
                           <p>Favorite Genre: {favorite_genre === "" ? "No Genre Picked" : favorite_genre}</p>  
                         </div>
                         
                         <div>
-                          <i class="fas fa-globe-americas"></i>
+                          <i className="fas fa-globe-americas"></i>
                           <p>Location: {location}</p>  
                         </div>
                         
                         <div>
-                          <i class="fas fa-users"></i>
+                          <i className="fas fa-users"></i>
                           <p>Following: {this.props.friends.length} </p>  
                         </div>
                         

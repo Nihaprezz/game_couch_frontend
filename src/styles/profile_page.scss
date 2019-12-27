@@ -109,8 +109,63 @@
     color: $black;
 }
 
+//END OF PROFILE LIKED GAMES STYLING
 
+//PROFILE POSTS STYLING
 
 .profile-post-container {
     grid-area: posts;
+    border-left: 5px solid $black;
+    margin-left: 2%;
+}
+
+.profile-post-container h1 {
+    color: $black;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 1%;
+}
+
+
+//POST STYLING WHICH WILL BE USED FOR USER AND NON USER
+.user-profile-posts {
+    margin-top: 1%;
+    display: grid;
+    text-align: left;
+    grid-row-gap: .8vw;
+}
+
+.user-profile-posts div {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    background: $black;
+    font-family: $primaryFont;
+    padding: .7vw;
+    border-radius: 10px;
+}
+
+.user-profile-posts div p {
+    color: white;
+    font-size: 1.2vw;
+    letter-spacing: 1px;
+}
+
+.user-profile-posts div p:nth-child(2) {
+    color: $blue;
+    justify-self: end;
+    font-size: .8vw;
+    padding: .5vw;
+}
+
+.user-profile-posts div button {
+    justify-self: end;
+    align-self: center;
+    font-size: .7vw;
+}
+
+.user-profile-posts div:last-child {
+    margin-bottom: 1vw;
 }

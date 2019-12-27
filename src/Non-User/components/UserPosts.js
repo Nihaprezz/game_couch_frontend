@@ -9,10 +9,9 @@ class UserPosts extends React.Component {
         return (
             
             <div>
-                UserPost: 
                 <p>{content}</p>
-                <p>{created_at.split("T")[0]}</p>
-                {this.props.currentUser.id === mainuser_id && <button onClick={() =>  this.props.deletePost(id)}>Delete</button> }
+                <p>Posted on: {created_at.split("T")[0]}</p>
+                {this.props.currentUser.id === mainuser_id && <button className="button is-light" onClick={() =>  this.props.deletePost(id)}>Delete</button> }
             </div>
         )
     }
