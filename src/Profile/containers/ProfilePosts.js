@@ -49,7 +49,7 @@ class ProfilePosts extends React.Component {
 
     render(){
         return (
-            <div> 
+            <div className="profile-post-container"> 
                 This is the ProfilePosts Comp
                 {this.state.myPosts.slice(0,6).map(post => {
                     return < Post key={post.id} postObject={post} deletePost={this.deletePost} />

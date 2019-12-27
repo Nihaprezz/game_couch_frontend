@@ -1,0 +1,116 @@
+@import "variables.scss";
+
+.profile-page-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: .6fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "games posts";
+}
+
+//Profile Header Styling 
+.profile-header {
+    grid-area: header;
+    background: $black;
+    display: grid;
+    grid-template-columns: 30% auto;
+    font-family: $primaryFont;
+}
+
+.avatar-container {
+    align-self: center;
+    justify-self: center;
+}
+
+.my-profile-avatar {
+    border-radius: 50%;
+    width: 35vh;
+}
+
+.my-profile-details {
+    color: white;
+    display: grid;
+    grid-template-rows: 20% 10% auto 20%;
+}
+
+.my-profile-details h1 {
+    font-weight: bold;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: start;
+    margin-left: 3%;
+}
+
+.my-profile-details .bio {
+    font-style: italic;
+    justify-self: start;
+    align-self: center;
+    margin-left: 3%;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+.stats-grouped {
+    margin-top: 1.5%;
+    padding: 2%;
+    border-top: 1.5px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 1.7vw;
+}
+
+.my-profile-btns {
+    margin-right: 3%;
+    justify-self: end;
+    align-self: center;
+}
+
+.my-profile-btns button {
+    font-size: .8em;
+    font-family: $primaryFont;
+    letter-spacing: 1px;
+}
+
+//END OF PROFILE HEADER STYLING
+
+//PROFILE LIKED GAMES STYLING 
+
+.profile-games-container {
+    grid-area: games;
+    display: grid;
+    grid-template-rows: 6% auto;
+}
+
+.profile-games-container h1 {
+    color: $black;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.my-liked-games {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.my-profile-game-card a {
+    color: $blue;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.my-profile-game-card a:hover {
+    color: $black;
+}
+
+
+
+.profile-post-container {
+    grid-area: posts;
+}

@@ -7,14 +7,33 @@ class ProfileHeader extends React.Component {
         let {username, bio, avatar, favorite_genre, location} = this.props.currentUser
         return (
             <div className="profile-header">
-                <h1>Username : {username}</h1>
                 <div className="avatar-container">
-                    <img alt={avatar} src={`${avatar}`}></img>
+                    <img className="my-profile-avatar" alt={avatar} src={`${avatar}`}></img>
                 </div>
-                <p>Bio: {bio}</p>
-                <p>Favorite Genre: {favorite_genre === "" ? "No Genre Picked" : favorite_genre}</p>
-                <p>Location: {location}</p>
-                <p>Following: {this.props.friends.length} </p>
+                <div className="my-profile-details">
+                    <h1>{username}</h1>
+                    <p className="bio">{bio}</p>
+                    <div className="stats-grouped">
+                        <div>
+                          <i class="fas fa-gamepad"></i>
+                          <p>Favorite Genre: {favorite_genre === "" ? "No Genre Picked" : favorite_genre}</p>  
+                        </div>
+                        
+                        <div>
+                          <i class="fas fa-globe-americas"></i>
+                          <p>Location: {location}</p>  
+                        </div>
+                        
+                        <div>
+                          <i class="fas fa-users"></i>
+                          <p>Following: {this.props.friends.length} </p>  
+                        </div>
+                        
+                    </div>
+                    <div className="my-profile-btns">
+                        <button className="button is-light">Edit Profile</button>
+                    </div>
+                </div>
             </div>
         )
     }

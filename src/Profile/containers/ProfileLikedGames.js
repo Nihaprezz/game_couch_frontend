@@ -11,11 +11,13 @@ class ProfileLikedGames extends React.Component {
 
     render(){
         return (
-            <div> 
-                This is the ProfileLikedGames Comp
+            <div className="profile-games-container"> 
+                <h1>Liked Games</h1>
+                <div className="my-liked-games">
                 {this.props.likedGames.slice(0,6).map(game => {
                     return < GameCard key={game.id} gameObject={game}/>
                 })}
+                </div>
             </div>
         )
     }
