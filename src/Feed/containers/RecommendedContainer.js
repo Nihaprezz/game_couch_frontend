@@ -4,6 +4,10 @@ import UserSearch from "./UserSearch"
 import { connect } from "react-redux"
 import { fetchingAllUserInfo } from "../../redux/actions"
 
+const quickMargin = {
+    marginTop: '5%'
+}
+
 class RecommendedContainer extends React.Component {
     constructor(){
         super();
@@ -48,7 +52,7 @@ class RecommendedContainer extends React.Component {
         }
 
         return (
-            <div>
+            <div style={quickMargin} className="recommended-all-container">
                 {this.state.displaySearch ? < UserSearch switch={this.switchToSearch} /> : (
                     <div className="recommended-friends-container">
                         <h1>Recommended Friends</h1>

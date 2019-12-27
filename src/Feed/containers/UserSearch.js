@@ -32,13 +32,13 @@ class UserSearch extends React.Component{
     render(){
         console.log(this.state.searchResults)
         return (
-            <div>
+            <div className="recommended-friends-container">
                 <h1>Search</h1>
                 {/*eslint-disable-next-line*/}
                 <div> or <a onClick={() => this.props.switch()}>Go Back to Recommended</a></div>
 
-                <br></br>
-                <div className="field has-addons">
+      
+                <div id="user-search-input" className="field has-addons">
                 <div className="control">
                     <input onChange={(e) => {this.onChange(e)}}
                     className="input" type="text" placeholder="Enter Username"/>
@@ -46,7 +46,7 @@ class UserSearch extends React.Component{
                 <div className="control">
                     {/*eslint-disable-next-line*/}
                     <a onClick={() => {this.searchUsers()}}
-                    className="button is-info">
+                    className="button is-link">
                     Search
                     </a>
                 </div>
