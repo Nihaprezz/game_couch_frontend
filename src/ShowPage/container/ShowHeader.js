@@ -55,28 +55,33 @@ class ShowHeader extends React.Component{
     render(){
         let { background_image, name } = this.props.movieObj //named movie OBJ but should be named Game Obj... minor fix
 
-        console.log(this.props.movieObj)
+        const headerStyle = {
+            background: `url(${background_image})`,
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center center',
+            width: 'auto',
+            height: '100%'
+        }
+ 
+ 
         return (
-            <div>
-                This is the ShowHeader
+            <div style={headerStyle} className="show-game-header-container">
 
-                <h1>{name}</h1>
+                <div className="show-game-header-details">
+                    <h1 className="show-game-header-text">{name}</h1>
 
-                <div>
-                    <img alt={name} src={background_image}></img>
+                    <button onClick={() => this.likeGame(this.props.movieObj)}
+                    className="button is-link">Like</button>
+
+                    <div>
+                        Genres:
+                        {!this.props.movieObj.genres ? <h1>True</h1> : this.props.movieObj.genres.map(genre => {
+                            return <h1 key={genre.id}>{genre.name}</h1>
+                        })}
+                    </div>
                 </div>
-
-                <button onClick={() => this.likeGame(this.props.movieObj)}
-                className="button is-black">Like</button>
-
-                <div>
-                    Genres:
-                    {!this.props.movieObj.genres ? <h1>True</h1> : this.props.movieObj.genres.map(genre => {
-                        return <h1 key={genre.id}>{genre.name}</h1>
-                    })}
-                </div>
-
-                <div>
+                
+                {/* <div>
                     ScreenShots:
                     {!this.props.screenShots ? <h1>false</h1> : this.props.screenShots.map(picture => {
                         return (
@@ -85,7 +90,7 @@ class ShowHeader extends React.Component{
                         </div>
                         )
                     })}
-                </div>
+                </div> */}
             </div>
         )
     }

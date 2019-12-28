@@ -8,7 +8,7 @@ class ShowDetails extends React.Component{
         let { description_raw, rating, released, website, stores} = this.props.movieObj
    
         return (
-            <div>
+            <div className="show-game-details-container">
                 This is the Show Details 
                 <p>Description: {description_raw}</p>
                 <p>Rating: {rating}</p>

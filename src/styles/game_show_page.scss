@@ -1,0 +1,107 @@
+@import "variables.scss";
+
+.show-page-container {
+    // border: 10px solid red;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 65vh auto auto;
+    grid-template-areas: 
+    "header"
+    "screenshots"
+    "details";
+    background: $black;
+}
+
+// GAME HEADER STYLING
+
+.show-game-header-container {
+    grid-area: header;
+    // border: 2px solid black;
+    margin: 1% 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30% auto;
+    grid-template-areas: 
+    ". ."
+    "card .";
+}
+
+.show-game-header-details {
+    grid-area: card;
+    align-self: center;
+    height: auto;
+    width: 27vw;
+    margin-left: 2vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .8fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "genres like";
+
+    border-radius: 10px;
+    padding: 3%;
+    background: $black;
+    color: white;
+    font-family: $primaryFont;
+    box-shadow: 0px 0px 5px white;
+}
+
+.show-game-header-details .show-game-header-text {
+    grid-area: header;
+    font-size: 2vw;
+    letter-spacing: 2px;
+    align-self: center;
+    padding: 1%;
+}
+
+.show-game-header-details button {
+    grid-area: like;
+    align-self: center;
+    justify-self: center;
+    font-family: $primaryFont;
+    letter-spacing: 2px;
+    font-size: 1.2vw;
+}
+
+.show-game-header-details div {
+    grid-area: genres;
+}
+//END OF SHOW GAME HEADER STYLING
+
+//SCREENSHOT STYLING
+.show-page-screenshots {
+    grid-area: screenshots;
+    
+    border: 5px solid white;
+    margin-top: 2vh;
+    background: white;
+
+    display: grid;
+    grid-template-rows: 3vw auto;
+}
+
+.show-page-screenshots h1 {
+    justify-self: center;
+    align-self: center;
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2vw;
+    color: $black;
+    letter-spacing: 2px;
+}
+
+.screenshots-container {
+    display: grid;
+    grid-column-gap: 1vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+
+.show-game-details-container {
+    grid-area: details;
+}

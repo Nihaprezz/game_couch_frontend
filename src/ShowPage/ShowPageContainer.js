@@ -3,6 +3,7 @@ import { trackPromise} from 'react-promise-tracker';
 import { LoadingSpinerComponent } from './Loading'
 import ShowHeader from './container/ShowHeader'
 import ShowDetails from "./container/ShowDetails"
+import "../styles/game_show_page.scss"
 
 
 class ShowPageContainer extends React.Component {
@@ -39,12 +40,33 @@ class ShowPageContainer extends React.Component {
     }
 
     render(){
+
+        const screenShotStyle = {
+            width: 'auto',
+            height: '30vh'
+        }
+
         return (
             <div>
                 {!this.state.showGame.name ? <LoadingSpinerComponent/> : (
-                    <div>
-                    < ShowHeader movieObj={this.state.showGame} screenShots={this.state.gameScreenShots}/> 
-                    < ShowDetails movieObj={this.state.showGame} showGame={this.state.showGame}/>
+                    <div className="show-page-container">
+                        < ShowHeader movieObj={this.state.showGame}/> 
+
+                        <div className="show-page-screenshots"> 
+                            <h1>Screenshots</h1>
+                            <div className="screenshots-container">
+                            {!this.state.gameScreenShots ? <h1>false</h1> : this.state.gameScreenShots.slice(0,3).map(picture => {
+                                return (
+                                <div key={picture.id}>
+                                    <img style={screenShotStyle} alt={picture.id} src={picture.image}></img>
+                                </div>
+                                )
+                            })}
+                            </div>
+                        </div>
+
+
+                        < ShowDetails movieObj={this.state.showGame} showGame={this.state.showGame}/>
                     </div>
                 )}  
             </div>
