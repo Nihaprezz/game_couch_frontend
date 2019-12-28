@@ -8,11 +8,14 @@ class UserPostsContainer extends React.Component {
         })
         
         return (
-            <div>
-                UserPostsContainer
-                {orderedPost.slice(0,6).map(post => {
-                    return < Post key={post.id} postObject={post}/>
-                })}
+            <div className="non-user-posts">
+                <h1>Recent Posts</h1>
+                <div className="user-profile-posts">
+                    {orderedPost.slice(0,6).map(post => {
+                        return < Post key={post.id} postObject={post}/>
+                    })}                   
+                </div>
+
             </div>
         )
     }

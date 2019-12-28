@@ -3,7 +3,7 @@
 .profile-page-container {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: .6fr 1fr;
+    grid-template-rows: 47vh auto;
     grid-template-areas: 
     "header header"
     "games posts";
@@ -169,3 +169,91 @@
 .user-profile-posts div:last-child {
     margin-bottom: 1vw;
 }
+
+//NON USER STYLING 
+.non-user-page-container {
+    font-family: $primaryFont;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 47vh auto;
+    grid-template-areas:
+        "header header"
+        "games posts"
+}
+
+.non-user-header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 30% auto;
+    background: $black;
+}
+
+.non-user-header h1 {
+    font-weight: bold;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: start;
+    margin-left: 3%;
+}
+
+.non-user-details .bio {
+    font-style: italic;
+    justify-self: start;
+    align-self: center;
+    margin-left: 3%;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+.non-user-details {
+    color: white;
+    display: grid;
+    grid-template-rows: 20% 10% auto 20%;
+}
+
+.non-user-stats-grouped {
+    margin-top: 1.5%;
+    padding: 2%;
+    border-top: 1.5px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 1.7vw;
+}
+
+//NON-USER-STYING-HEADER DONE
+
+//NON-USER LIKED GAMES STYLING 
+.non-user-liked-games {
+    grid-area: games;
+    display: grid;
+    grid-template-rows: 6% auto;
+}
+
+.non-user-liked-games h1 {
+    color: $black;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+//END OF NON USER GAME STYLING
+
+//NON USER POST STYLING
+.non-user-posts {
+    grid-area: posts;
+    border-left: 5px solid $black;
+    margin-left: 2%;
+}
+
+.non-user-posts h1{
+    color: $black;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 1%;
+}
+

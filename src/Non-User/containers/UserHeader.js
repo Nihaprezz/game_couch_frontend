@@ -55,23 +55,42 @@ class UserHeader extends React.Component {
 
         console.log(checkUser)
         return (
-            <div className="profile-header">
-                <h1>Username : {username}</h1>
+            <div className="non-user-header">
                 <div className="avatar-container">
-                    <img alt={avatar} src={`${avatar}`}></img>
+                    <img className="my-profile-avatar" alt={avatar} src={`${avatar}`}></img>
                 </div>
-                <p>Bio: {bio}</p>
-                <p>Favorite Genre: {favorite_genre === "" ? "No Genre Picked" : favorite_genre}</p>
-                <p>Location: {location}</p>
-                <p>Following: {this.props.friends.length} </p>
-                <br></br>
-                {checkUser.length === 1 ? (
-                    <button onClick={() => {this.unfollowUser()}}
-                    className="button is-success"> Already Following </button> 
-                ): (
-                    <button onClick={() => {this.followUser()}}
-                    className="button is-dark">Follow User</button>
-                )}
+
+                <div className="non-user-details">
+                    <h1>{username}</h1>
+                    <p className="bio">{bio}</p>
+
+                    <div className="non-user-stats-grouped ">
+                        <div>
+                         <i className="fas fa-gamepad"></i>
+                         <p>Favorite Genre: {favorite_genre === "" ? "No Genre Picked" : favorite_genre}</p>   
+                        </div>
+                        
+                        <div>
+                          <i className="fas fa-globe-americas"></i>
+                          <p>Location: {location}</p>  
+                        </div>
+                        
+                        <div>
+                          <i className="fas fa-users"></i>
+                          <p>Following: {this.props.friends.length} </p>  
+                        </div>
+                    </div>
+
+                    <div className="my-profile-btns">
+                        {checkUser.length === 1 ? (
+                            <button onClick={() => {this.unfollowUser()}}
+                            className="button is-info is-light"> Already Following </button> 
+                        ): (
+                            <button onClick={() => {this.followUser()}}
+                            className="button is-info">Follow User</button>
+                        )}
+                    </div>
+                </div>
             </div>
         )
     }

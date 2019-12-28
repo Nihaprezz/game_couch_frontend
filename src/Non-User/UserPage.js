@@ -2,6 +2,7 @@ import React from "react"
 import UserHeader from "./containers/UserHeader"
 import UserLikedGames from "./containers/UserLikedGames"
 import UserPostsContainer from "./containers/UserPostsContainer"
+import "../styles/profile_page.scss"
 
 class UserPage extends React.Component{
     constructor(){
@@ -32,12 +33,10 @@ class UserPage extends React.Component{
     render(){
 
         return (
-            <div>
+            <div className="non-user-page-container">
                 < UserHeader userObj={this.state.user}
                 friends={this.state.friends} />
-                <br></br>
                 < UserLikedGames likedGames={this.state.likedGames}/>
-                <br></br>
                 < UserPostsContainer posts={this.state.posts} />
             </div>
         )
