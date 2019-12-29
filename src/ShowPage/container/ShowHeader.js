@@ -80,17 +80,6 @@ class ShowHeader extends React.Component{
                         })}
                     </div>
                 </div>
-                
-                {/* <div>
-                    ScreenShots:
-                    {!this.props.screenShots ? <h1>false</h1> : this.props.screenShots.map(picture => {
-                        return (
-                        <div key={picture.id}>
-                            <img alt={picture.id} src={picture.image}></img>
-                        </div>
-                        )
-                    })}
-                </div> */}
             </div>
         )
     }

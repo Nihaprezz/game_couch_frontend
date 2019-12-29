@@ -101,7 +101,128 @@
     grid-template-rows: 1fr;
 }
 
-
+//GAME DETAILS CONTAINER
 .show-game-details-container {
     grid-area: details;
+    // border: 3px solid orange;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+// DESCRIPTION STYLING
+.show-game-description {
+    color: white;
+    font-family: $primaryFont;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.show-game-description h1 {
+    font-size: 2vw;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.show-game-description p {
+    font-size: 1.5vw;
+    text-align: left;
+    padding-bottom: 1.5vh;
+}
+
+//VIDEO AND STATS STYLING
+.show-game-stats-video {
+    // border: 3px solid red;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    background: white;
+    padding: 1vh 2vw;
+}
+
+.show-game-stats-video .video-container {
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+}
+
+.video-container h1 {
+    color: $black;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.show-game-stats {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.rating-released-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.5vw;
+    font-family: $primaryFont;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: $black;
+}
+
+.rating-released-container div svg {
+    font-size: 2.2vw;
+    color: $black;
+}
+
+.website-and-stores {
+    // border: 3px solid blue;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.5vw;
+    font-family: $primaryFont;
+    font-weight: bold;
+}
+
+.website-and-stores svg {
+    color: $black;
+    font-size: 2.2vw;
+}
+
+.website-and-stores a {
+    color: $blue;
+    font-family: $primaryFont;
+}
+
+.website-and-stores a:hover {
+    color: $black;
+}
+
+.website-and-stores h1 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: $black;
+}
+
+//END OF VIDEO AND STATS STYLING
+
+//GAME REVIEW STLING 
+.show-game-reviews-container {
+    // border: 5px solid orange;
+    margin-top: 2vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.show-game-reviews-container .game-review-textarea {
+    justify-self: center;
+}
+
+.game-review-textarea button {
+    font-family: $primaryFont;
+    letter-spacing: 1px;
 }
