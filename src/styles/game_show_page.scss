@@ -212,17 +212,87 @@
 //GAME REVIEW STLING 
 .show-game-reviews-container {
     // border: 5px solid orange;
+    margin-right: 2vw;
+    margin-left: 2vw;
     margin-top: 2vh;
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 3vw 1fr;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "textarea reviews";
+    grid-gap: 1vw;
+}
+
+.show-game-review-text {
+    grid-area: header;
+}
+
+.show-game-review-text h1 {
+    color: white;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 .show-game-reviews-container .game-review-textarea {
+    grid-area: textarea;
     justify-self: center;
+    padding-top: 2vw;
 }
 
 .game-review-textarea button {
     font-family: $primaryFont;
     letter-spacing: 1px;
+}
+
+.game-reviews-container {
+    grid-area: reviews;
+    padding-top: 2vw;
+    
+    display: grid;
+    grid-row-gap: 1vw;
+}
+
+.game-reviews-container div:last-child {
+    margin-bottom: 2vw;
+}
+
+.game-review-card {
+    border: 1px solid white;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    text-align: left;
+    padding: 1vw;
+    font-family: $primaryFont;
+}
+
+.game-review-card a {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .2vw;
+}
+
+.game-review-card h1 {
+    color: white;
+    font-size: 1.3vw;
+    letter-spacing: 1px;
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+}
+
+.game-review-card p {
+    color: white;
+    justify-self: end;
+    font-size: 1vw;
+    margin-top: 1vw;
+}
+
+.game-review-card button {
+    font-size: .9vw;
+    justify-self: end;
+    margin-top: 1vw;
 }

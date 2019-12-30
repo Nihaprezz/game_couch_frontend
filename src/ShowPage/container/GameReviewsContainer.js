@@ -95,6 +95,10 @@ class GameReviewsContainer extends React.Component {
  
         return (
             <div className="show-game-reviews-container"> 
+                <div className="show-game-review-text">
+                    <h1>Reviews</h1>
+                </div>
+
                 <div style={test} className="game-review-textarea">
                     <textarea onChange={(e) => {this.onChange(e)}}
                     className="textarea" id="textarea-game-review" placeholder="Enter Game Review" value={this.state.review}></textarea>
