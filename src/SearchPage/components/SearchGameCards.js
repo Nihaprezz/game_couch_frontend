@@ -12,7 +12,7 @@ class SearchGameCards extends React.Component {
             backgroundSize: '100% 100%',
             backgroundPosition: 'center center',
             width: 'auto',
-            height: '300px'
+            height: '16vw'
         }
 
         return (

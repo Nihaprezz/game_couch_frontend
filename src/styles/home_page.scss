@@ -23,11 +23,14 @@
 }
 
 .title-container h1{
+    font-weight: bold;
     color: white;
-    font-size: 5.5em;
-    margin-bottom: 1.4vh;
-    letter-spacing: 2px;
+    font-size: 5vw;
+    margin-bottom: 1.2vh;
+    letter-spacing: .7vw;
     text-shadow: 8px 9px 16px black;
+    text-transform: uppercase;
+
 }
 
 .title-container p {
@@ -40,7 +43,14 @@
 }
 
 .title-container button {
-    margin-top: 1vh;
+    margin-top: 2vh;
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    letter-spacing: .1vw;
+}
+
+.title-container button a:hover {
+    color: white;
 }
 
 //button styling 
@@ -51,6 +61,11 @@
 }
 
 //FEATURED GAMES STYLING
+.featured-container {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
 .featured-header {
     margin-top: 2vh;
 }
