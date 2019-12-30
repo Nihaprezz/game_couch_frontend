@@ -24,7 +24,7 @@ class Login extends React.Component {
     render(){
         return(
             <div style={sample}>
-               <h1 className="is-size-1">Login</h1>
+               <h1 className="is-size-1 login-header">Login</h1>
                <div className="field">
                     <label className="label">Username</label>
                     <div className="control">
@@ -41,11 +41,11 @@ class Login extends React.Component {
                     </div>
                 </div>
 
-                <div className="control">
+                <div className="control form-submit-container">
                     <button onClick={ (event) => {this.props.loggingIn(event, this.state)}}
-                    className="button is-primary is-light">Submit</button>
+                    className="button is-link">Login</button>
                     {/* eslint-disable-next-line */}
-                    <span>  Or  <a onClick={() => this.props.switchForm()}
+                    <span>  Don't have an account? <a onClick={() => this.props.switchForm()}
                     > Sign Up</a></span>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import { connect } from "react-redux"
 import { signUp, logIn } from "../redux/actions"
+import "../styles/login_page.scss"
 
 class LoginPage extends React.Component {
     constructor(){
@@ -31,14 +32,16 @@ class LoginPage extends React.Component {
     
     render(){
         return(
-            <div>
-            {this.state.displayLogin ? 
-            (
-            < Login switchForm={this.switchForm} loggingIn={this.loggingIn}/>
-            ) : 
-            (
-            < Signup switchForm={this.switchForm} createUser={this.createUser} />
-            )}
+            <div className="login-page-container">
+                <div className="login-signup-form">
+                {this.state.displayLogin ? 
+                (
+                < Login switchForm={this.switchForm} loggingIn={this.loggingIn}/>
+                ) : 
+                (
+                < Signup switchForm={this.switchForm} createUser={this.createUser} />
+                )}
+                </div>
             </div>
         )
     }

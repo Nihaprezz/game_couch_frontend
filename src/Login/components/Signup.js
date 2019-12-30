@@ -3,7 +3,7 @@ import React from "react"
 const genres = ["Action", "Arcade", "Adventure", "Casual", "Family", "Fighting", "Indie", "Platformer", "Puzzle", "Racing", "RPG", "Shooter","Simulation", "Sports", "Strategy"]
 
 const sample = {
-    width: '40vw'
+    width: '40vw',
 }
 
 class Signup extends React.Component {
@@ -29,7 +29,7 @@ class Signup extends React.Component {
     render(){
         return(
             <div style={sample}>
-                <h1 className="is-size-1">Sign Up</h1>
+                <h1 className="is-size-1 sign-up-text">Sign Up</h1>
                 <div className="field">
                     <label className="label">Username</label>
                     <div className="control">
@@ -81,10 +81,10 @@ class Signup extends React.Component {
                         className="input" name="location" type="text" placeholder="Location"/>
                     </div>
                 </div>
-                <div className="control">
+                <div className="control form-submit-container">
              
                     <button onClick={(event) => this.props.createUser(event, this.state)}
-                    className="button is-primary is-light">Submit</button>
+                    className="button is-link">Sign Up</button>
                     {/* eslint-disable-next-line */}
                     <span>  Or  <a onClick={() => this.props.switchForm()}
                     > Login</a></span>
