@@ -12,6 +12,7 @@ import ProfilePage from "./Profile/ProfilePage"
 import FeedPage from "./Feed/FeedPage"
 import LoginPage from "./Login/LoginPage"
 import UserPage from "./Non-User/UserPage"
+import EditProfile from "./Profile/EditProfile"
 
 
 class App extends Component {
@@ -38,6 +39,10 @@ class App extends Component {
             < Route exact path="/profile" component={() => {
               return this.props.currentUser.length === 0 ? < Redirect to="/login"/> : < ProfilePage /> 
             }}/> 
+
+          < Route exact path="/profile/edit" render={() => {
+            return this.props.currentUser.length === 0 ? < Redirect to="/login"/> : < EditProfile />
+          }}/>
   
 
           < Route exact path="/user/:id" render={(props) => {

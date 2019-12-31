@@ -1,5 +1,6 @@
 import React from "react" 
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 
 class ProfileHeader extends React.Component {
 
@@ -31,7 +32,9 @@ class ProfileHeader extends React.Component {
                         
                     </div>
                     <div className="my-profile-btns">
-                        <button className="button is-light">Edit Profile</button>
+                        <button className="button is-light">
+                           <Link to="/profile/edit">Edit Profile</Link>
+                        </button>
                     </div>
                 </div>
             </div>

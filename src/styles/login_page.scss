@@ -91,3 +91,21 @@
 .signup-buttons-container {
     display: grid;
 }
+
+//EDIT PROFILE
+#edit-profile-form {
+    width: 70%;
+}
+
+.edit-profile-header {
+    font-size: 1.8vw;
+    color: $black;
+}
+
+.edit-profile-header h1 {
+    font-weight: bold;
+    letter-spacing: .1vw;
+    text-transform: uppercase;
+    margin-bottom: 1vw;
+}
+

@@ -37,7 +37,7 @@ class Login extends React.Component {
                     <label className="label">Password</label>
                     <div className="control">
                         <input onChange={(event) => this.handleInputChange(event)}
-                        className="input" type="text" name="password" placeholder="Password"/>
+                        className="input" type="password" name="password" placeholder="Password"/>
                     </div>
                 </div>
 
