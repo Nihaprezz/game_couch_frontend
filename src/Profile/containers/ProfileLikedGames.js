@@ -44,12 +44,17 @@ class ProfileLikedGames extends React.Component {
     }
 
     render(){
-        console.log(this.props.likedGames)
+        let orderedGames = this.props.likedGames.sort((a,b) => {
+            return a.created_at > b.created_at ? -1 : 1
+        })
+
+        
+
         return (
             <div className="profile-games-container"> 
                 <h1 onClick={this.handleOpenModal}>Liked Games</h1>
                 <div className="my-liked-games">
-                {this.props.likedGames.slice(0,6).map(game => {
+                {orderedGames.slice(0,6).map(game => {
                     return < GameCard key={game.id} gameObject={game}/>
                 })}
                 </div>
@@ -66,7 +71,7 @@ class ProfileLikedGames extends React.Component {
                                 <div className="modal-liked-games">
                                     {this.props.likedGames.map(game => {
                                         return (
-                                            <p>
+                                            <p key={game.id}>
                                                 <Link to={`/game/${game.game_api_id}`}>{game.name}</Link>
                                             </p>
                                         )

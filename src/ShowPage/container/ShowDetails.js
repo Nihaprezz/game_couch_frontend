@@ -30,25 +30,25 @@ class ShowDetails extends React.Component{
                     <div className="show-game-stats">
                         <div className="rating-released-container">
                             <div>
-                                <i class="fas fa-star-half-alt"></i>
+                                <i className="fas fa-star-half-alt"></i>
                                 <p>Rating: <br></br> {rating}</p>                      
                             </div>
                             <div>
-                                <i class="fas fa-info-circle"></i>
+                                <i className="fas fa-info-circle"></i>
                                 <p>Released: <br></br> {released}</p>    
                             </div>
                         </div>
                        
                        <div className="website-and-stores">
                             <div>
-                                <i class="fas fa-globe"></i>
+                                <i className="fas fa-globe"></i>
                                 <br></br>
                                 <a href={website}> Game Website</a>  
                             </div>
 
                             <div>
                                 <div>
-                                    <i class="fas fa-store-alt"></i>
+                                    <i className="fas fa-store-alt"></i>
                                     <h1>Stores</h1>  
                                 </div>
                                 

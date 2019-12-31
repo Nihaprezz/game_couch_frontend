@@ -82,6 +82,10 @@
     grid-area: games;
     display: grid;
     grid-template-rows: 6% auto;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    padding-bottom: 1vh;
+    border: .7vw solid $black;
 }
 
 .profile-games-container h1 {
@@ -108,6 +112,15 @@
     color: $blue;
     font-weight: bold;
     letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.my-profile-game-card {
+    transition: box-shadow .3s;
+}
+
+.my-profile-game-card:hover {
+    box-shadow: 0px 0px 15px $black;
 }
 
 .my-profile-game-card a:hover {
@@ -120,8 +133,7 @@
 
 .profile-post-container {
     grid-area: posts;
-    border-left: 5px solid $black;
-    margin-left: 2%;
+    border: .7vw solid $black;
 }
 
 .profile-post-container h1 {
@@ -249,7 +261,6 @@
 //NON USER POST STYLING
 .non-user-posts {
     grid-area: posts;
-    border-left: 5px solid $black;
     margin-left: 2%;
 }
 

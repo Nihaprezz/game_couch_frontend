@@ -215,6 +215,7 @@
     margin-right: 2vw;
     margin-left: 2vw;
     margin-top: 2vh;
+    margin-bottom: 3vh;
     display: grid;
     grid-template-rows: 3vw 1fr;
     grid-template-columns: 1fr 1fr;
@@ -295,4 +296,11 @@
     font-size: .9vw;
     justify-self: end;
     margin-top: 1vw;
+}
+
+.no-review-text {
+    color: white;
+    font-family: $primaryFont;
+    font-size: 2vw;
+    letter-spacing: .2vw;
 }

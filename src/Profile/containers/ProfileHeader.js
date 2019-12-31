@@ -12,7 +12,8 @@ const customStyles = {
       bottom                : 'auto',
       marginRight           : '-50%',
       transform             : 'translate(-50%, -50%)',
-      background            : '#151E28'
+      background            : '#151E28',
+      height                : 'auto',
     }
 };
 

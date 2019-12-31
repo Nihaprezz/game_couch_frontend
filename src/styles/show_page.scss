@@ -117,16 +117,19 @@
 
 //Results Game Card
 .search-game-card {
-    transition: box-shadow .6s;
+    transition: box-shadow .3s;
+    text-transform: uppercase;
+
 }
 
 .search-game-card:hover {
-    box-shadow: 10px 10px 12px $black;
+    box-shadow: 0px 0px 15px $black;
 }
 
 .search-game-text {
-    color: $blue;
+    color: $black;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: .1vw;
+    font-family: $primaryFont;
 }
 

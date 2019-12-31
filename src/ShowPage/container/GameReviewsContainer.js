@@ -104,11 +104,11 @@ class GameReviewsContainer extends React.Component {
                     className="textarea" id="textarea-game-review" placeholder="Enter Game Review" value={this.state.review}></textarea>
                     <br></br>
                     <button onClick={() => {this.onSubmit()}}
-                    className="button is-rounded">Review</button>
+                    className="button">Review</button>
                 </div>
                 
                 <div className="game-reviews-container">
-                    {orderedReviews.length === 0 ? <h1> No Reviews. Be the first to review!</h1> : (
+                    {orderedReviews.length === 0 ? <h1 className="no-review-text"> No Reviews. Be the first to review!</h1> : (
                         orderedReviews.map(review => {
                             return < GameReview key={review.id} reviewObject={review} deleteReview={this.deleteReview} />
                         })

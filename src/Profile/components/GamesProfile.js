@@ -17,8 +17,8 @@ class GamesProfile extends React.Component {
         return (
 
             <div className="my-profile-game-card">
-                <div style={cardStyle}>
-                </div>
+                <Link to={`/game/${game_api_id}`}><div style={cardStyle}>
+                </div></Link>
                 < Link to={`/game/${game_api_id}`}>
                 {name}
                 </Link>

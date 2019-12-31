@@ -93,7 +93,7 @@
 
 .featured-gamecards-container:hover {
     // border: 5px solid red;
-    box-shadow: 8px 8px 10px $black;
+    box-shadow: 0px 0px 25px $black;
 }
 
 .game-cards-name-container {
@@ -104,8 +104,9 @@
     color: $blue;
     font-weight: bold;
     font-family: $primaryFont;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1vw;
+    letter-spacing: .1vw;
+    text-transform: uppercase;
 }
 
 
