@@ -1,0 +1,44 @@
+@import "variables.scss";
+
+.friend-modal {
+    height: 20vh;
+    width: 30vw;
+    font-family: $primaryFont;
+    display: grid;
+    justify-items: center;
+    color: white;
+}
+
+.friend-modal h1 {
+    font-size: 2.8vw;
+    letter-spacing: .2vw;
+    font-weight: bold;
+}
+
+.friend-modal button {
+    justify-self: end;
+    align-self: center;
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.modal-all-friends {
+    overflow: auto;
+    padding: .5vw 5vh;
+    border-radius: .4vw;
+    justify-self: start;
+}
+
+.modal-all-friends p a {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .2vw;
+}
+
+.modal-all-friends p a:hover {
+    color: white;
+}
+
+
