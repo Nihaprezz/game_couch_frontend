@@ -93,6 +93,11 @@ function signUp(userInfo){
     }
 }
 
+//UPDATING THE USER
+function updateUser(updatedUser){
+    return {type: "UPDATE_USER", payload: updatedUser}
+}
+
 //checking user upon mount, get request to api/v1/profile
 function checkUser(){
     if (localStorage.getItem('jwt')){
@@ -201,4 +206,4 @@ function searchPosts(searchText) {
 }
 
 export { fetchingJustReleased, signUp, checkUser, signOut,logIn, changeSearch, gameSearchResults, fetchingTopGames, fetchingByGenre,
-    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts, addNewFriend, removeFriend}
+    fetchingAllUserInfo, setAllRelatedPosts, addingToAllPosts, searchPosts, addNewFriend, removeFriend, updateUser}

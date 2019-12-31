@@ -1,6 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
+import { updateUser } from "../redux/actions"
+import Swal from 'sweetalert2'
 
 const genres = ["Action", "Arcade", "Adventure", "Casual", "Family", "Fighting", "Indie", "Platformer", "Puzzle", "Racing", "RPG", "Shooter","Simulation", "Sports", "Strategy"]
 
@@ -19,11 +21,20 @@ class EditProfile extends React.Component {
     }
 
     componentDidMount(){
+        let defaultGenre;
+
+        //checking the genre and if its empty setting the value to Action
+        if ( this.props.currentUser.favorite_genre === "" ) { 
+            defaultGenre = "Action"
+        } else {
+            defaultGenre = this.props.currentUser.favorite_genre
+        }
+
         this.setState({
             username: this.props.currentUser.username,
             bio: this.props.currentUser.bio,
             avatar: this.props.currentUser.avatar,
-            favorite_genre: this.props.currentUser.favorite_genre,
+            favorite_genre: defaultGenre,
             location: this.props.currentUser.location
         })
     }
@@ -56,8 +67,15 @@ class EditProfile extends React.Component {
         })
         .then(resp => resp.json())
         .then(updatedProfile => {
-            console.log(updatedProfile)
-            debugger
+            this.props.updateUser(updatedProfile)
+            Swal.fire({
+                title: 'Profile Updated',
+                text: `Updates were made successfully!`,
+                icon: 'success',
+                confirmButtonText: 'Go to Profile',
+            }).then(function() {
+                window.history.back();
+            })
         })
 
     }
@@ -141,4 +159,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(EditProfile)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateUser: (updatedUser) => {dispatch(updateUser(updatedUser))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfile)
