@@ -17,8 +17,6 @@ const customStyles = {
 };
 
 
-
-
 class ProfileHeader extends React.Component {
     constructor(){
         super();
@@ -41,7 +39,6 @@ class ProfileHeader extends React.Component {
 
     render(){
         let {username, bio, avatar, favorite_genre, location} = this.props.currentUser
-        console.log(this.props.friends)
         return (
             <div className="profile-header">
                 <div className="avatar-container">

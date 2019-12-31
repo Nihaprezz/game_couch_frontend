@@ -41,4 +41,22 @@
     color: white;
 }
 
+.modal-liked-games {
+    justify-self: center;
+    align-self: center;
+    overflow: auto;
+    height: 18vh;
+    letter-spacing: .1vw;
+    font-size: 1.8vw;
+}
+
+.modal-liked-games p a:hover {
+    color: white;
+
+}
+
+.games-modal {
+    width: 40vw !important;
+    height: 30vh !important;
+}
 

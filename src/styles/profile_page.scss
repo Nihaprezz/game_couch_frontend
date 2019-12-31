@@ -92,6 +92,11 @@
     letter-spacing: 2px;
 }
 
+.profile-games-container h1:hover {
+    color: $blue;
+    cursor: pointer;
+}
+
 .my-liked-games {
     display: grid;
     grid-template-columns: 1fr 1fr;
