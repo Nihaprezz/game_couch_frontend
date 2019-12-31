@@ -247,6 +247,10 @@
     grid-area: games;
     display: grid;
     grid-template-rows: 6% auto;
+    border: .7vw solid $black;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    padding-bottom: 1vh;
 }
 
 .non-user-liked-games h1 {
@@ -261,7 +265,7 @@
 //NON USER POST STYLING
 .non-user-posts {
     grid-area: posts;
-    margin-left: 2%;
+    border: .7vw solid $black;
 }
 
 .non-user-posts h1{

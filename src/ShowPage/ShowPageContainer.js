@@ -1,6 +1,7 @@
 import React from "react"
 import { trackPromise} from 'react-promise-tracker';
 import { LoadingSpinerComponent } from './Loading'
+import { connect } from 'react-redux'
 import ShowHeader from './container/ShowHeader'
 import ShowDetails from "./container/ShowDetails"
 import "../styles/game_show_page.scss"
@@ -45,7 +46,8 @@ class ShowPageContainer extends React.Component {
             width: 'auto',
             height: '30vh'
         }
-
+        
+        console.log(this.props.userLikedGames)
         return (
             <div>
                 {!this.state.showGame.name ? <LoadingSpinerComponent/> : (
@@ -74,5 +76,10 @@ class ShowPageContainer extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        userLikedGames: state.userLikedGames
+    }
+}
 
-export default ShowPageContainer
+export default connect(mapStateToProps, null)(ShowPageContainer)
