@@ -65,7 +65,7 @@ class UserPostContainer extends React.Component {
                         value={this.state.newPost}></textarea>
                         <br></br>
                         <button onClick={() => this.onSubmit()}
-                        className="button is-link is-rounded">Create</button>
+                        className="button is-link is-rounded">Post</button>
                     </div>
 
                 </div>

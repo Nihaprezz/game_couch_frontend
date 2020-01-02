@@ -54,7 +54,7 @@ class RecommendedContainer extends React.Component {
         return (
             <div style={quickMargin} className="recommended-all-container">
                 {this.state.displaySearch ? < UserSearch switch={this.switchToSearch} /> : (
-                    <div className="recommended-friends-container">
+                    <div className="recommended-friends-container animated flipInY">
                         <h1>Recommended Friends</h1>
 
                         {/*eslint-disable-next-line*/}

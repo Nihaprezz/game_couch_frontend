@@ -51,7 +51,7 @@ class ProfileLikedGames extends React.Component {
         
 
         return (
-            <div className="profile-games-container"> 
+            <div className="profile-games-container animated zoomIn"> 
                 <h1 onClick={this.handleOpenModal}>Liked Games</h1>
                 <div className="my-liked-games">
                 {orderedGames.slice(0,6).map(game => {
@@ -65,7 +65,7 @@ class ProfileLikedGames extends React.Component {
                     style={customStyles}
                     ariaHideApp={false}
                     contentLabel="Example Modal">
-                            <div className="friend-modal games-modal">
+                            <div className="friend-modal games-modal animated lightSpeedIn">
                                 <h1 ref={subtitle => this.subtitle = subtitle}>Liked Games</h1>
                                 
                                 <div className="modal-liked-games">

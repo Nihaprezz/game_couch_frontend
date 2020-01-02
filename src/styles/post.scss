@@ -1,5 +1,9 @@
 @import "variables.scss";
 
+.post-animated-container {
+    animation-delay: .3s;
+}
+
 .post-container {
     border: 3px solid #2f445a;
     display: grid;

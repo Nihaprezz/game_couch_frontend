@@ -49,7 +49,7 @@ class ProfilePosts extends React.Component {
 
     render(){
         return (
-            <div className="profile-post-container"> 
+            <div className="profile-post-container animated zoomIn"> 
                 <h1>Recent Posts</h1>
                 <div className="user-profile-posts">
                     {this.state.myPosts.slice(0,6).map(post => {

@@ -41,7 +41,7 @@ class ProfileHeader extends React.Component {
     render(){
         let {username, bio, avatar, favorite_genre, location} = this.props.currentUser
         return (
-            <div className="profile-header">
+            <div className="profile-header animated zoomIn">
                 <div className="avatar-container">
                     <img className="my-profile-avatar" alt={avatar} src={`${avatar}`}></img>
                 </div>
@@ -73,7 +73,7 @@ class ProfileHeader extends React.Component {
                             ariaHideApp={false}
                             contentLabel="Example Modal"
                             >
-                            <div className="friend-modal">
+                            <div className="friend-modal animated lightSpeedIn">
                                 <h1 ref={subtitle => this.subtitle = subtitle}>Following</h1>
                                 
                                 <div className="modal-all-friends">

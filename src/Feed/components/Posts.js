@@ -11,7 +11,7 @@ class Posts extends React.Component {
     render(){
         let {post_content, post_user, post_user_image, post_created, post_user_id} = this.props.postObj
         return (
-            <div className="post-container">
+            <div className="post-container animated slideInDown">
                 <div className="post-avatar-container" >
                     <img style={test} alt="profile-pic" src={post_user_image}></img>  
                 </div>

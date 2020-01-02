@@ -4,7 +4,7 @@ import GameCard from "../../Profile/components/GamesProfile"
 class UserLikedGames extends React.Component {
     render(){
         return (
-            <div className="non-user-liked-games">
+            <div className="non-user-liked-games animated zoomIn">
                 <h1>Liked Games</h1>
                 <div className="my-liked-games">
                     {this.props.likedGames.slice(0,6).map( game => {

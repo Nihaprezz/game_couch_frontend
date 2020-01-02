@@ -53,3 +53,11 @@
     letter-spacing: 2px;
     margin-bottom: 3%;
 }
+
+.feed-create-post-container button {
+    font-family: $primaryFont;
+    width: 8vw;
+    font-size: 1.2vw;
+    letter-spacing: .1vw;
+    box-shadow: 0px 2px 12px $blue;
+}

@@ -55,7 +55,7 @@ class UserHeader extends React.Component {
 
         console.log(checkUser)
         return (
-            <div className="non-user-header">
+            <div className="non-user-header animated zoomIn">
                 <div className="avatar-container">
                     <img className="my-profile-avatar" alt={avatar} src={`${avatar}`}></img>
                 </div>

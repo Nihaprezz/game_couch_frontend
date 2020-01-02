@@ -36,7 +36,7 @@ class PostsContainer extends React.Component {
 
 
         return (
-            <div style={margin}>
+            <div style={margin} className="post-animated-container animated fadeInDown">
                 < SearchPosts updateSearch={this.updateSearch}/>
                 {orderedPost.slice(0,7).map(post => {
                     return < Posts key={post.post_id} postObj={post} />

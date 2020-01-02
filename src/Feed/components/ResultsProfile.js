@@ -11,9 +11,9 @@ class ResultsProfile extends React.Component {
         return (
             <div>
                {this.props.results.message ? (
-                   <div>No user found with the username entered. Search Again?</div>
+                   <div>No user found with that username entered. Search Again?</div>
                ) : (
-                   <div className="recommended-profile-card">
+                   <div className="recommended-profile-card animated jackInTheBox">
                         <p>{this.props.results.username}</p>
                         <Link to={`/user/${this.props.results.id}`}>
                             <img style={reSize} src={this.props.results.avatar} alt="avatar"></img>

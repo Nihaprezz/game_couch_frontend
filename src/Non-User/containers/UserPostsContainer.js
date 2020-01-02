@@ -8,7 +8,7 @@ class UserPostsContainer extends React.Component {
         })
         
         return (
-            <div className="non-user-posts">
+            <div className="non-user-posts animated zoomIn">
                 <h1>Recent Posts</h1>
                 <div className="user-profile-posts">
                     {orderedPost.slice(0,6).map(post => {
