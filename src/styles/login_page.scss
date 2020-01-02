@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 .login-page-container {
-    height: 96vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: .3fr auto .3fr;
     grid-template-rows: 1fr;
@@ -21,9 +21,10 @@
     justify-self: center;
     border: 3px solid white;
     background: white;
-    padding: 2vw;
+    padding: 1vw;
     border-radius: .2vw;
     box-shadow: 10px 10px 10px black;
+    margin-bottom: 1.5vh;
 }
 
 .login-header {
@@ -71,6 +72,10 @@
 }
 
 //SIGNUP PAGE STYLING
+
+#signup-container {
+    font-size: 1vw;
+}
 
 .sign-up-text {
     font-weight: bold;

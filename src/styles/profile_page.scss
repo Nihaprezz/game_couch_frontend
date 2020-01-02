@@ -82,7 +82,7 @@
 .profile-games-container {
     grid-area: games;
     display: grid;
-    grid-template-rows: 6% auto;
+    grid-template-rows: 6.5vh auto;
     padding-left: .5vw;
     padding-right: .5vw;
     padding-bottom: 1vh;
@@ -247,7 +247,7 @@
 .non-user-liked-games {
     grid-area: games;
     display: grid;
-    grid-template-rows: 3.1vw auto;
+    grid-template-rows: 3.2vw auto;
     border: .7vw solid $black;
     padding-left: .5vw;
     padding-right: .5vw;

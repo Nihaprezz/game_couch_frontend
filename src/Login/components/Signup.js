@@ -28,7 +28,7 @@ class Signup extends React.Component {
     
     render(){
         return(
-            <div style={sample}>
+            <div id="signup-container" style={sample}>
                 <h1 className="is-size-1 sign-up-text">Sign Up</h1>
                 <div className="field">
                     <label className="label">Username</label>

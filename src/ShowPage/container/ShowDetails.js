@@ -43,7 +43,8 @@ class ShowDetails extends React.Component{
                             <div>
                                 <i className="fas fa-globe"></i>
                                 <br></br>
-                                <a href={website}> Game Website</a>  
+                                { /* eslint-disable-next-line */}
+                                <a target="_blank" href={website}> Game Website</a>  
                             </div>
 
                             <div>

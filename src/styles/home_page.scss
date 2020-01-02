@@ -129,8 +129,17 @@ footer {
 
 .rawg-text {
     color: white;
+    font-family: $primaryFont;
+    font-size: 1.4vw;
+    letter-spacing: .1vw;
 }
 
 .rawg-text:hover {
     color: $blue;
+}
+
+.copyright-container {
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    letter-spacing: .1vw;
 }
