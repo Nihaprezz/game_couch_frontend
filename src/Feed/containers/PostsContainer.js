@@ -38,7 +38,7 @@ class PostsContainer extends React.Component {
         return (
             <div style={margin}>
                 < SearchPosts updateSearch={this.updateSearch}/>
-                {orderedPost.slice(0,6).map(post => {
+                {orderedPost.slice(0,7).map(post => {
                     return < Posts key={post.post_id} postObj={post} />
                 })}
             </div>

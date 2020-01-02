@@ -16,7 +16,7 @@ class SearchGameCards extends React.Component {
         }
 
         return (
-            <div className="search-game-card">
+            <div className="search-game-card animated fadeIn">
                 <Link to={`/game/${this.props.gameObj.id}`}>
                 <div style={cardStyle} className="search-game-card-image"></div>
                 </Link>

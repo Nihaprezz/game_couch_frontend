@@ -8,7 +8,7 @@ class ResultsContainer extends React.Component {
     render(){
         return (
             <div className="results-container"> 
-                <div className="results-filter-section">
+                <div className="results-filter-section animated slideInLeft">
                     < FilterBar /> 
                 </div>
 

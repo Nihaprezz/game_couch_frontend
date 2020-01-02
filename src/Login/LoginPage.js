@@ -33,10 +33,10 @@ class LoginPage extends React.Component {
     render(){
         return(
             <div className="login-page-container">
-                <div className="login-signup-form">
+                <div className="login-signup-form animated bounceInUp">
                 {this.state.displayLogin ? 
                 (
-                < Login switchForm={this.switchForm} loggingIn={this.loggingIn}/>
+                < Login switchForm={this.switchForm} loggingIn={this.loggingIn} />
                 ) : 
                 (
                 < Signup switchForm={this.switchForm} createUser={this.createUser} />

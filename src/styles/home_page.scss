@@ -47,6 +47,12 @@
     font-family: $primaryFont;
     text-transform: uppercase;
     letter-spacing: .1vw;
+    border-color: $black;
+    box-shadow: 0px 7px 10px $black;
+}
+
+.title-container button:hover{
+    border-color: $black;
 }
 
 .title-container button a:hover {

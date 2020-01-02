@@ -31,9 +31,9 @@ class SearchBarContainer extends React.Component {
 
     render(){
         return (
-            <div className="game-search-container">
+            <div className="game-search-container animated slideInDown">
                 <div className="game-search-text">
-                    <h1>Search Games by Title</h1>
+                    <h1>Search Games</h1>
                 </div>
                 
                 <div className="game-search-input">

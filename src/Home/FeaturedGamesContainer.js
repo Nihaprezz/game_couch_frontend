@@ -8,7 +8,7 @@ class FeaturedGamesContainer extends React.Component{
 
     render(){
         return (
-            <div className="featured-container">
+            <div className="featured-container animated bounceInLeft">
                 <div className="featured-header">
                     <h1 className="featured-text is-size-1">Featured Games</h1>
                 </div>

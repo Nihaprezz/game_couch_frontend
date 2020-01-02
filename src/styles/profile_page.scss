@@ -246,7 +246,7 @@
 .non-user-liked-games {
     grid-area: games;
     display: grid;
-    grid-template-rows: 6% auto;
+    grid-template-rows: 3.1vw auto;
     border: .7vw solid $black;
     padding-left: .5vw;
     padding-right: .5vw;
@@ -259,6 +259,7 @@
     font-size: 2vw;
     font-weight: bold;
     letter-spacing: 2px;
+
 }
 //END OF NON USER GAME STYLING
 

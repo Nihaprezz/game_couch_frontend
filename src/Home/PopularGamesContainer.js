@@ -5,7 +5,7 @@ import GameCard from "./GameCard"
 class PopularGamesContainer extends React.Component{
     render(){
         return (
-            <div className="featured-container">
+            <div className="featured-container animated bounceInRight">
                 <div className="featured-header">
                     <h1 className="featured-text is-size-1">Top Rated Games</h1>
                 </div>
