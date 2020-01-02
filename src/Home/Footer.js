@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="copyright-container">
-                @2019 The Game Couch
+                @2020 The Game Couch
             </div>
 
             <div className="bulma-container">
