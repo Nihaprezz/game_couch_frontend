@@ -4,3 +4,5 @@ Game Couch is a community platform for gamers. Users can browse through a catalo
 
 Developed with a React frontend and Ruby on Rails backend. 
 Backend can be found at : https://github.com/Nihaprezz/game_couch_backend
+
+Demo Video : https://youtu.be/tbwp5T4BzNk
